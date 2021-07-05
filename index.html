@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@100;300&display=swap" rel="stylesheet">
+
+    <script src="style/animation.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social'ART</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+
+
+            <div class="content-left">
+                <h1>SOCIAL'ART</h1>
+                <!--<img src="img/logo_socialart.png" alt="">-->
+                <div class="search_bar">
+                    <input type="Search" name="Search" id="">
+
+                    <img src="img/search.svg" alt="Search" class="search_icone">
+                </div>
+        
+
+            </div>
+
+            <div class="content-right">
+                <img src="img/AddPost.svg" alt="AddPost" id="AddPost">
+                <img src="img/User.svg" alt="AddPost" id="User">
+                <div id="set_modal" onclick="SetModal()">
+                    <img src="img/Login.svg" alt="Login" id="Login">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <section class="left_fixed_navigation">
+        <img src="img/developpement.svg" alt="">
+        <img src="img/graphiste.svg" alt="">
+        <img src="img/reseau.svg" alt="">
+        <img src="img/cyber-security.svg" alt="">
+        <img src="img/detente.svg" alt="">
+        <button onclick="SetModal()" id="set_modal"> click</button>
+
+
+
+    </section>
+
+<section class="popup_log">
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2> Bienvenue dans Votre espace de connexion</h2>
+
+        <div class="container-login">
+
+            <div class="input_edit">
+                <h2>S'IDENTIFIER</h2>
+
+                <div>
+                    <label for="name"><em>Votre Identifiant</em></label><br />
+                    <input type="text" id="Id_Name" name="Longin-id" required>
+                </div>
+
+                <div>
+                    <label for="text"><em>Votre Mot de Passe</em></label><br />
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div>
+                    <button type="button" id="connexion">Se connecter</button>
+                </div>
+            </div>
+
+            <div class="input_inscription">
+                <h2>S'INSCRIRE</h2>
+
+                <div>
+                    <label for="name"><em>Choisir un Identifiant</em></label><br />
+                    <input type="text" id="Id_Name" name="Longin-id" required>
+                </div>
+
+                <div>
+                    <label for="name"><em>Renseignez votre mail</em></label><br />
+                    <input type="text" id="Id_Name" name="Longin-id" required>
+                </div>
+
+                <div>
+                    <label for="text"><em>Votre Mot de Passe</em></label><br />
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <button type="button" id="new_member">Devenir Membre</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+      
+    </div>
+
+
+</section>
+
+<section class="Article">
+
+    <div class="carte_article">
+            <div class="data_article">
+                <div class="meta_post">
+                    <h3> Titre Article</h3>
+                    <p> Auteur : </p>
+                </div>
+            
+                <div class="meta_logo">
+                    <div class="like">
+                        <img src="img/heart.svg" alt=""><p>15O</p>
+                    </div>
+
+                    <div class="comment">
+                        <img src="img/comment.svg" alt=""><p>19O</p>
+                    </div>
+
+                </div>
+                
+            </div>
+    </div>
+
+
+    <div class="carte_article">
+        <div class="data_article">
+            <div class="meta_post">
+                <h3> Titre Article</h3>
+                <p> Auteur : </p>
+            </div>
+        
+            <div class="meta_logo">
+                <div class="like">
+                    <img src="img/heart.svg" alt=""><p>15O</p>
+                </div>
+
+                <div class="comment">
+                    <img src="img/comment.svg" alt=""><p>19O</p>
+                </div>
+
+            </div>
+            
+        </div>
+</div>
+
+
+<div class="carte_article">
+    <div class="data_article">
+        <div class="meta_post">
+            <h3> Titre Article</h3>
+            <p> Auteur : </p>
+        </div>
+    
+        <div class="meta_logo">
+            <div class="like">
+                <img src="img/heart.svg" alt=""><p>15O</p>
+            </div>
+
+            <div class="comment">
+                <img src="img/comment.svg" alt=""><p>19O</p>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="carte_article">
+    <div class="data_article">
+        <div class="meta_post">
+            <h3> Titre Article</h3>
+            <p> Auteur : </p>
+        </div>
+    
+        <div class="meta_logo">
+            <div class="like">
+                <img src="img/heart.svg" alt=""><p>15O</p>
+            </div>
+
+            <div class="comment">
+                <img src="img/comment.svg" alt=""><p>19O</p>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="carte_article">
+    <div class="data_article">
+        <div class="meta_post">
+            <h3> Titre Article</h3>
+            <p> Auteur : </p>
+        </div>
+    
+        <div class="meta_logo">
+            <div class="like">
+                <img src="img/heart.svg" alt=""><p>15O</p>
+            </div>
+
+            <div class="comment">
+                <img src="img/comment.svg" alt=""><p>19O</p>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="carte_article">
+    <div class="data_article">
+        <div class="meta_post">
+            <h3> Titre Article</h3>
+            <p> Auteur : </p>
+        </div>
+    
+        <div class="meta_logo">
+            <div class="like">
+                <img src="img/heart.svg" alt=""><p>15O</p>
+            </div>
+
+            <div class="comment">
+                <img src="img/comment.svg" alt=""><p>19O</p>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="carte_article">
+    <div class="data_article">
+        <div class="meta_post">
+            <h3> Titre Article</h3>
+            <p> Auteur : </p>
+        </div>
+    
+        <div class="meta_logo">
+            <div class="like">
+                <img src="img/heart.svg" alt=""><p>15O</p>
+            </div>
+
+            <div class="comment">
+                <img src="img/comment.svg" alt=""><p>19O</p>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="carte_article">
+    <div class="data_article">
+        <div class="meta_post">
+            <h3> Titre Article</h3>
+            <p> Auteur : </p>
+        </div>
+    
+        <div class="meta_logo">
+            <div class="like">
+                <img src="img/heart.svg" alt=""><p>15O</p>
+            </div>
+
+            <div class="comment">
+                <img src="img/comment.svg" alt=""><p>19O</p>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="carte_article">
+    <div class="data_article">
+        <div class="meta_post">
+            <h3> Titre Article</h3>
+            <p> Auteur : </p>
+        </div>
+    
+        <div class="meta_logo">
+            <div class="like">
+                <img src="img/heart.svg" alt=""><p>15O</p>
+            </div>
+
+            <div class="comment">
+                <img src="img/comment.svg" alt=""><p>19O</p>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+<div class="carte_article">
+    <div class="data_article">
+        <div class="meta_post">
+            <h3> Titre Article</h3>
+            <p> Auteur : </p>
+        </div>
+    
+        <div class="meta_logo">
+            <div class="like">
+                <img src="img/heart.svg" alt=""><p>15O</p>
+            </div>
+
+            <div class="comment">
+                <img src="img/comment.svg" alt=""><p>19O</p>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="carte_article">
+    <div class="data_article">
+        <div class="meta_post">
+            <h3> Titre Article</h3>
+            <p> Auteur : </p>
+        </div>
+    
+        <div class="meta_logo">
+            <div class="like">
+                <img src="img/heart.svg" alt=""><p>15O</p>
+            </div>
+
+            <div class="comment">
+                <img src="img/comment.svg" alt=""><p>19O</p>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+
+
+</section>
+
+</body>
+
+</html>
