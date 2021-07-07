@@ -10,7 +10,6 @@ p{
 
 h1{
     font-size: 25px;
-    margin: 0;
 }
 
 
@@ -313,6 +312,8 @@ margin-top: 1.5rem;
     margin-right: 2rem;
     color: #E6EEF8;
     text-align: left;
+    width: 100%;
+
 }
 
 .data_post {
@@ -386,7 +387,83 @@ button#new_comment:hover{
 
 }
 
+/*----------------------------------- Profil VIEW ---------------------------------- */
 
+.avatar-bloc{
+    height: 140px;
+    width: 140px;
+    border: 1.5px solid white;
+    border-radius: 85px;
+    margin-right: 1rem;
+    position: relative;
+    top: -45px;
+    left: 3px;
+    background-image: url(img/bg.jpeg);
+    background-size: contain;
+    z-index: 10;
+ 
+}
+
+section.container-profil-view {
+    padding-top: 78px;
+    margin-left: 8%;
+    color: white;
+    
+}
+
+.top-profil{
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid white;
+}
+
+.profil-desc{
+    padding:  2rem 0 2rem 5rem;
+    width: 30%;
+}
+
+.bloc-left-profil{
+    display: flex;
+    padding: 0 5rem 0 0;
+    border-right: 2px solid white;
+    font-size: 25px;
+}
+
+
+.email-profil{
+    font-size: 15px;
+}
+
+.name-profil{
+font-size: 20px;
+}
+
+.pseudo-profil{
+    color: #7c888f;
+}
+
+
+
+.cover_profil{
+    width: 100%;
+    height: 250px;
+    border-radius: 5px;
+    background-image: url(img/cover.png);
+    border-bottom: 1px solid white;
+}
+
+
+.galerie{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+ 
+
+}
+
+.galerie-profil h1{
+    margin-left: 3rem;
+}
 
   @media (max-width: 1245px) {
     .input_edit_inf{
