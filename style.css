@@ -67,6 +67,17 @@ h1{
     height: 35px;
 }
 
+.login-button{
+    background: orange;
+    color: white;
+    border-radius: 15px;
+    padding: 0.5rem;
+}
+
+button.login-button:hover{
+    color: orange;
+    background: white;
+}
 
 #set_modal{
     margin-right: 4rem;
@@ -137,19 +148,19 @@ section.left_fixed_navigation:hover .rubrique-title{
 
 
 .img-rubrique#developpement:hover{
-    opacity: 0.5;
+    opacity: 0.3;
 }
 .img-rubrique#graphiste:hover{
-    opacity: 0.5;
+    opacity: 0.3;
 }
 .img-rubrique#reseau:hover{
-    opacity: 0.5;
+    opacity: 0.3;
 }
 .img-rubrique#cyber:hover{
-    opacity: 0.5;
+    opacity: 0.3;
 }
 .img-rubrique#detente:hover{
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 /*----------------- Modale de connexion ---------------------------*/
