@@ -12,6 +12,9 @@ h1{
     font-size: 25px;
 }
 
+.logo{
+    display: flex;
+}
 
 .header-container{
     font-family: 'Caveat', cursive;
@@ -51,7 +54,7 @@ h1{
     height: 40px;
     padding-left: 2rem;
     background: #252730;
-    border: 1px solid #8ebcd4;
+    border: 1px solid #FF7D2C;
 }
 
 .search_icone{
@@ -67,14 +70,14 @@ h1{
 }
 
 .login-button{
-    background: orange;
+    background: #FF7D2C;
     color: white;
     border-radius: 15px;
     padding: 0.5rem;
 }
 
 button.login-button:hover{
-    color: orange;
+    color: #FF7D2C;
     background: white;
 }
 
@@ -100,7 +103,6 @@ section.left_fixed_navigation {
     flex-direction: column;
     justify-content: center;
     width: 3%;
-    border-right: 3px solid #8ebcd4;
     height: 100vh;
     padding-top: 70px;
     position: fixed;
@@ -111,7 +113,7 @@ section.left_fixed_navigation {
 
 section.left_fixed_navigation:hover{
     width: 6%;
-    border-right: 3px solid orange;
+    border-right: 1px solid #FF7D2C;
     
 }
 
@@ -152,7 +154,7 @@ section.left_fixed_navigation:hover .rubrique-title{
     opacity: 1;
     visibility: visible;
     transform: rotate(270deg);
-    color: orange;
+    color: #FF7D2C;
     position: fixed;
     bottom: 40px;
 }
@@ -187,7 +189,7 @@ section.left_fixed_navigation:hover .rubrique-title{
     visibility: hidden;
     width: 120px;
     background-color: whitesmoke;
-    color: ORANGE;
+    color: #FF7D2C;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
@@ -446,7 +448,7 @@ h3.auteur_comment{
 
 .auteur_comment a{
    
-    color: orange;
+    color: #FF7D2C;
  
     font-size: 15px;
 
