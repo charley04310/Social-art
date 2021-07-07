@@ -67,9 +67,12 @@ h1{
     margin-right: 4rem;
     cursor: pointer;
     height: 35px;
+
 }
 
 .login-button{
+    border: 0;
+
     background: #FF7D2C;
     color: white;
     border-radius: 15px;
@@ -543,7 +546,18 @@ font-size: 20px;
     color: #7c888f;
 }
 
+.edit-profil{
 
+    background:#FF7D2C; 
+    color:white; border:0; 
+    padding: 0.5rem; 
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-profil:hover{
+    opacity: 0.8;
+}
 
 .cover_profil{
     width: 100%;
