@@ -107,7 +107,7 @@ section.left_fixed_navigation {
     position: fixed;
     background: #252730;
     transition: width 2s;
-   
+    align-items: center;
 }
 
 section.left_fixed_navigation:hover{
@@ -163,6 +163,31 @@ section.left_fixed_navigation:hover .rubrique-title{
     opacity: 0.3;
 }
 
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: whitesmoke;
+    color: ORANGE;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
 /*----------------- Modale de connexion ---------------------------*/
 
 .modal {
