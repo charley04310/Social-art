@@ -20,7 +20,6 @@ h1{
     flex-wrap: wrap;
     height: 80px;
     background-color:#252730 ;
-    border-bottom: 3px solid #E6EEF8;
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -101,7 +100,7 @@ section.left_fixed_navigation {
     flex-direction: column;
     justify-content: center;
     width: 3%;
-    border-right: 4px solid white;
+    border-right: 3px solid #8ebcd4;
     height: 100vh;
     padding-top: 70px;
     position: fixed;
@@ -112,6 +111,8 @@ section.left_fixed_navigation {
 
 section.left_fixed_navigation:hover{
     width: 6%;
+    border-right: 3px solid orange;
+    
 }
 
 section.left_fixed_navigation:hover .img-rubrique{
@@ -131,7 +132,16 @@ section.left_fixed_navigation .img-rubrique{
     cursor: pointer;
 }
 
+.img-rubrique#User{
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+}
 
+.img-rubrique#User:hover{
+    opacity: 0.3;
+    visibility: visible;
+}
 section.left_fixed_navigation:hover .rubrique-title{
     opacity: 0;
     visibility: hidden;
@@ -142,7 +152,9 @@ section.left_fixed_navigation:hover .rubrique-title{
     opacity: 1;
     visibility: visible;
     transform: rotate(270deg);
-    color: white;
+    color: orange;
+    position: fixed;
+    bottom: 40px;
 }
 
 
@@ -434,7 +446,7 @@ h3.auteur_comment{
 
 .auteur_comment a{
    
-    color: rgb(198, 198, 198);
+    color: orange;
  
     font-size: 15px;
 
