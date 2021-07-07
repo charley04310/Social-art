@@ -83,22 +83,73 @@ h1{
     height: 25px;
 }
 
+
+/*--------- RUBRIQUE DE NAVIGATION ------------------*/
 section.left_fixed_navigation {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 8%;
+    width: 3%;
     border-right: 4px solid white;
     height: 100vh;
     padding-top: 70px;
     position: fixed;
     background: #252730;
+    transition: width 2s;
    
 }
-section.left_fixed_navigation img {
-    height: 45px;
+
+section.left_fixed_navigation:hover{
+    width: 6%;
+}
+
+section.left_fixed_navigation:hover .img-rubrique{
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0%;
+}
+
+section.left_fixed_navigation .img-rubrique{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, margin 0.5s;
+    height: 40px;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    margin-top: -100%;
+    cursor: pointer;
+}
+
+
+section.left_fixed_navigation:hover .rubrique-title{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.rubrique-title{
+    transition: opacity 0.2s, visibility 0.2s;
+    opacity: 1;
+    visibility: visible;
+    transform: rotate(270deg);
+    color: white;
+}
+
+
+
+.img-rubrique#developpement:hover{
+    opacity: 0.5;
+}
+.img-rubrique#graphiste:hover{
+    opacity: 0.5;
+}
+.img-rubrique#reseau:hover{
+    opacity: 0.5;
+}
+.img-rubrique#cyber:hover{
+    opacity: 0.5;
+}
+.img-rubrique#detente:hover{
+    opacity: 0.5;
 }
 
 /*----------------- Modale de connexion ---------------------------*/
@@ -246,7 +297,7 @@ cursor: pointer;
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 7rem;
-    margin-left: 8%;
+    margin-left: 3%;
 }
 
 .data_article{
@@ -300,7 +351,7 @@ margin-top: 1.5rem;
 
 .post_view{
     padding-top: 7rem;
-    margin-left: 8%;
+    margin-left: 3%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -406,7 +457,7 @@ button#new_comment:hover{
 
 section.container-profil-view {
     padding-top: 78px;
-    margin-left: 8%;
+    margin-left: 3%;
     color: white;
     
 }
@@ -462,7 +513,7 @@ font-size: 20px;
 }
 
 .galerie-profil h1{
-    margin-left: 3rem;
+    margin-left: 7rem;
 }
 
   @media (max-width: 1245px) {
