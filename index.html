@@ -41,12 +41,16 @@
 
             <div class="content-right">
 
-
-                <div id="outer-div">
-                    <div id="inner-div"></div>
+                <div class="light-mode">
+                    <p >light-mode</p>
+                    <div id="outer-div">
+                        <div id="inner-div"></div>
+                    </div>
                 </div>
+           
 
-                <img src="img/AddPost.svg" alt="AddPost" id="AddPost" onclick="ModalAddArticle()" >
+
+                <img src="img/AddPost.svg" alt="AddPost" id="AddPost" onclick="ModalAddArticle()">
                 <img src="img/User.svg" alt="AddPost" class="img-rubrique" id="User" onclick="EditInf()">
 
 
@@ -62,7 +66,7 @@
     </header>
 
 
-    <section class="left_fixed_navigation">
+    <section id="left_fixed_navigation" class="left_fixed_navigation">
 
         <div class="tooltip">
             <img src="img/developpement.svg" alt="" class="img-rubrique" id="developpement">
@@ -159,7 +163,7 @@
         <!-- The Modal -->
         <div id="AddArticle" class="modal">
 
-        <!-- Modal content -->
+            <!-- Modal content -->
             <div class="AddArticle-content">
                 <span class="close">&times;</span>
                 <p>Some text in the Modal..</p>
@@ -178,7 +182,7 @@
                 <span class="close">&times;</span>
                 <p>Some text in the Modal..</p>
             </div>
-        
+
         </div>
 
     </section>
@@ -188,7 +192,8 @@
 
     <section class="container-welcoming">
         <h1>Bienvenue $name, Retrouve les dernieres créations de nos contributeurs</h1>
-        <p>Notre réseau social unique en son genre est destiné aux créateurs de contenues qui travaillent dans les métiers de digital</p>
+        <p>Notre réseau social unique en son genre est destiné aux créateurs de contenues qui travaillent dans les
+            métiers de digital</p>
 
     </section>
 
@@ -462,7 +467,10 @@
 
 <script>
     window.onload = function () {
-        darkMode();SetModal();ModalAddArticle();EditInf()
+        darkMode();
+        SetModal();
+        ModalAddArticle();
+        EditInf()
     }
     /******************** Load Service Worker ****************************************/
     if ('serviceWorker' in navigator) {

@@ -91,6 +91,7 @@ function EditInf(){
 
 function darkMode(){
     var toggled =false;
+var navLeftFixed = document.getElementById("left_fixed_navigation")
 var headerContainer = document.getElementById("header-container");
 var switchHolder = document.getElementById("outer-div");
 var switchButton = document.getElementById("inner-div");
@@ -101,8 +102,9 @@ switchButton.addEventListener('click',function () {
     switchButton.style.transform ="translateX(48px)";
     switchButton.style.backgroundColor = "white";
     switchHolder.style.border= "2px solid white";
-    document.body.style.backgroundColor = "#252730f5";
-    headerContainer.style.backgroundColor = "#252730"
+    document.body.style.backgroundColor = "rgb(49 52 67 / 96%)";
+    headerContainer.style.backgroundColor = "rgb(10 5 36)"
+    navLeftFixed.style.backgroundColor = "rgb(10 5 36)";
 
     toggled = true;
     }else{
@@ -110,6 +112,7 @@ switchButton.addEventListener('click',function () {
     switchButton.style.transition =".4s all ease-in-out";
 
     headerContainer.style.backgroundColor = "#d6d6d6"
+    navLeftFixed.style.backgroundColor = "#707070";
 
     switchButton.style.transform ="translateX(-1px)";
     switchButton.style.backgroundColor = "#f07d2d";

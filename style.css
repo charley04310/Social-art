@@ -24,6 +24,14 @@ body{
 }
 
 
+.light-mode p{
+    font-size: 17px;
+    color: #707070;
+    position: absolute;
+    top: 7px;
+    margin-left: 3px;
+}
+
 p{
     margin: 0;
 }
@@ -71,28 +79,32 @@ h1{
 .search_bar input{
     width: 250px;
     border-radius: 5px;
-    height: 40px;
+    height: 30px;
     padding-left: 2rem;
     background: #252730;
     border: 1px solid #FF7D2C;
+    color: white;
+    font-size: 16px;
 }
 
 .search_icone{
     position: relative;
-    height: 20px;
+    height: 15px;
     left: -242px;
 }
 
 #Login{
     margin-right: 4rem;
     cursor: pointer;
-    height: 35px;
+    height: 26px;
+    line-height: 1px;
+    
 
 }
 
 .login-button{
     border: 0;
-
+    transition: color 1s;
     background: #FF7D2C;
     color: white;
     border-radius: 15px;
@@ -101,7 +113,8 @@ h1{
 
 button.login-button:hover{
     color: #FF7D2C;
-    background: white;
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid #FF7D2C;
 }
 
 #set_modal{
@@ -129,7 +142,7 @@ section.left_fixed_navigation {
     height: 100vh;
     padding-top: 70px;
     position: fixed;
-    background: #252730;
+    background: #707070;
     transition: width 2s;
     align-items: center;
 }
@@ -141,6 +154,7 @@ section.left_fixed_navigation:hover{
 }
 
 section.left_fixed_navigation:hover .img-rubrique{
+    height: 40px;
     opacity: 1;
     visibility: visible;
     margin-top: 0%;
@@ -149,11 +163,11 @@ section.left_fixed_navigation:hover .img-rubrique{
 section.left_fixed_navigation .img-rubrique{
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s, margin 0.5s;
-    height: 40px;
+    transition: all 0.5s ease-out;
+    height: 0px;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    margin-top: -100%;
+    margin-top: -150%;
     cursor: pointer;
 }
 
@@ -214,7 +228,6 @@ section.left_fixed_navigation:hover .rubrique-title{
     background-color: whitesmoke;
     color: #FF7D2C;
     text-align: center;
-    border-radius: 6px;
     padding: 5px 0;
   
     /* Position the tooltip */
@@ -361,6 +374,7 @@ position: relative;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    color: white;
 }
 
 
@@ -383,7 +397,7 @@ cursor: pointer;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 7rem;
+    padding-top: 3rem;
     margin-left: 3%;
 }
 
