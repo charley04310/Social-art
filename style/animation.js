@@ -91,7 +91,9 @@ function EditInf(){
 
 function darkMode(){
     var toggled =false;
-var navLeftFixed = document.getElementById("left_fixed_navigation")
+   
+var welcoming = document.getElementById("container-welcoming");
+var navLeftFixed = document.getElementById("left_fixed_navigation");
 var headerContainer = document.getElementById("header-container");
 var switchHolder = document.getElementById("outer-div");
 var switchButton = document.getElementById("inner-div");
