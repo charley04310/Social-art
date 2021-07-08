@@ -2,7 +2,7 @@
  <style>
     
     .user-svg{
-      fill: white;
+      fill: grey;
       
     }
 

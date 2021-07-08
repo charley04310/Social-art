@@ -1,8 +1,28 @@
 body{
     margin: 0;
-    background: #252730f5;
+    /*background: #252730f5;*/
     font-family: 'Poppins', sans-serif;
 }
+
+/*----- DARK MODE DIV -------*/
+#outer-div{
+    margin-right: 3rem;
+    text-align: center;
+    width: 64px;
+    height: 15px;
+    border: 2px solid #f07d2d;
+    border-radius: 25px;
+}
+#inner-div{
+    width: 15px;
+    height: 15px;
+    border: 1px solid transparent;
+    background-color: #f07d2d;
+    border-radius: 50px;
+    position: relative;
+    bottom: 1px;
+}
+
 
 p{
     margin: 0;
@@ -12,7 +32,7 @@ h1{
     font-size: 25px;
 }
 
-.logo{
+.logo, .logo a{
     display: flex;
 }
 
@@ -22,7 +42,7 @@ h1{
     flex-direction: row;
     flex-wrap: wrap;
     height: 80px;
-    background-color:#252730 ;
+    background-color:white ;
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -116,7 +136,7 @@ section.left_fixed_navigation {
 
 section.left_fixed_navigation:hover{
     width: 6%;
-    border-right: 1px solid #FF7D2C;
+  
     
 }
 
@@ -328,6 +348,20 @@ position: relative;
     position: relative;
     left: -30px;
   }
+
+
+
+
+/*----------------------------------- welcoming ---------------------------------- */
+
+  section.container-welcoming {
+    padding-top: 8rem;
+    margin-left: 3%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 
 
 
