@@ -291,7 +291,7 @@ button#connexion{
 }
 
   /* Modal Content */
-  .modal-content {
+  .modal-content, .AddArticle-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
