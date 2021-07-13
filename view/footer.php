@@ -1,5 +1,5 @@
 
-</body>
+
 
 <script>
     window.onload = function () {
@@ -13,5 +13,5 @@
         navigator.serviceWorker.register('serviceworker.js');
     };
 </script>
-
+</body>
 </html>
