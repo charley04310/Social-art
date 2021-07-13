@@ -1,0 +1,16 @@
+{
+    " nom " : " Social-Art " ,
+    " short_name " : " blog " ,
+    " description " : " Social-Art " ,
+    " icônes " : [
+     {
+            " src " : " img/detente.png " ,
+            " tailles " : " 512x512 " ,
+            " tapez " : " image/png "
+        }
+    ],
+    " start_url " : " /Social-art/index.html " ,
+    " afficher " : " plein écran " ,
+    " theme_color " : " #B12A34 " ,
+    " background_color " : " #B12A34 "
+}
