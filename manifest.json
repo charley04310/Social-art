@@ -1,16 +1,16 @@
 {
-    " nom " : " Social-Art " ,
-    " short_name " : " blog " ,
-    " description " : " Social-Art " ,
-    " icônes " : [
+    "name": "Social-art",
+    "short_name": "blog",
+    "description": "Social-art",
+    "icons": [
      {
-            " src " : " img/detente.png " ,
-            " tailles " : " 512x512 " ,
-            " tapez " : " image/png "
+            "src": "img/detente.svg",
+            "sizes": "512x512",
+            "type": "image/png"
         }
     ],
-    " start_url " : " /Social-art/index.html " ,
-    " afficher " : " plein écran " ,
-    " theme_color " : " #B12A34 " ,
-    " background_color " : " #B12A34 "
+    "start_url": "/Social-art/index.html",
+    "display": "fullscreen",
+    "theme_color": "#B12A34",
+    "background_color": "#B12A34"
 }
