@@ -15,7 +15,9 @@
         rel="stylesheet">
     <script src="style/animation.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social'ART</title>
+
+    <title>TITRE</title>
+
 </head>
 
 <body>
@@ -42,7 +44,7 @@
             <div class="content-right">
 
                 <div class="light-mode">
-                    <p >light-mode</p>
+                  
                     <div id="outer-div">
                         <div id="inner-div"></div>
                     </div>
@@ -93,6 +95,7 @@
             <span class="tooltiptext">DÉTENTE</span>
         </div>
 
+        <img src="img/fleche.svg" alt="" class="img-fleche" id="fleche">
         <h2 class="rubrique-title">RUBRIQUES</h2>
 
     </section>

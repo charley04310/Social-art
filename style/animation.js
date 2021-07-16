@@ -101,12 +101,12 @@ var switchButton = document.getElementById("inner-div");
 switchButton.addEventListener('click',function () {
     if(!toggled){
     switchButton.style.transition =".4s all ease-in-out";
-    switchButton.style.transform ="translateX(48px)";
+    switchButton.style.transform ="translateX(25px)";
     switchButton.style.backgroundColor = "white";
     switchHolder.style.border= "2px solid white";
-    document.body.style.backgroundColor = "rgb(49 52 67 / 96%)";
-    headerContainer.style.backgroundColor = "rgb(10 5 36)"
-    navLeftFixed.style.backgroundColor = "rgb(10 5 36)";
+    document.body.style.backgroundColor = "#1d222f";
+    headerContainer.style.backgroundColor = "#262b37"
+    navLeftFixed.style.backgroundColor = "#262b37";
 
     toggled = true;
     }else{
@@ -116,7 +116,7 @@ switchButton.addEventListener('click',function () {
     headerContainer.style.backgroundColor = "#d6d6d6"
     navLeftFixed.style.backgroundColor = "#707070";
 
-    switchButton.style.transform ="translateX(-1px)";
+    switchButton.style.transform ="translateX(4px)";
     switchButton.style.backgroundColor = "#f07d2d";
     switchHolder.style.border= "2px solid #f07d2d";
     document.body.style.backgroundColor = "white";

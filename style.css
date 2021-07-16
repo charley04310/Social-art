@@ -5,24 +5,26 @@ body{
 }
  a{
      text-decoration: none;
+     color: #fe7400;
  }
 /*----- DARK MODE DIV -------*/
 #outer-div{
     margin-right: 3rem;
     text-align: center;
-    width: 64px;
-    height: 15px;
-    border: 2px solid #f07d2d;
-    border-radius: 25px;
+    width: 40px;
+    height: 1px;
+    border: 2px solid rgb(240, 125, 45);
+        border-radius: 25px;
 }
 #inner-div{
-    width: 15px;
-    height: 15px;
+    top: -7.5px;
+    width: 12px;
+    height: 12px;
     border: 1px solid transparent;
-    background-color: #f07d2d;
     border-radius: 50px;
     position: relative;
-    bottom: 1px;
+    background-color: rgb(240, 125, 45);
+
 }
 
 
@@ -84,7 +86,7 @@ h1{
     height: 30px;
     padding-left: 2rem;
  
-    border: 1px solid #FF7D2C;
+    border: 1px solid #fe7400;
     color: white;
     font-size: 16px;
 }
@@ -107,16 +109,16 @@ h1{
 .login-button{
     border: 0;
     transition: color 1s;
-    background: #FF7D2C;
+    background: #fe7400;
     color: white;
     border-radius: 15px;
     padding: 0.5rem;
 }
 
 button.login-button:hover{
-    color: #FF7D2C;
+    color: #fe7400;
     background: rgba(255, 255, 255, 0);
-    border: 1px solid #FF7D2C;
+    border: 1px solid #fe7400;
 }
 
 #set_modal{
@@ -135,16 +137,17 @@ button.login-button:hover{
 }
 
 
+
 /*--------- RUBRIQUE DE NAVIGATION ------------------*/
 section.left_fixed_navigation {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 3%;
+    width: 50px;
     height: 100vh;
     padding-top: 70px;
     position: fixed;
-    background: #707070;
+    background: #7f88a0;
     transition: all 1s;
     align-items: center;
 }
@@ -173,6 +176,20 @@ section.left_fixed_navigation .img-rubrique{
     cursor: pointer;
 }
 
+section.left_fixed_navigation:hover .img-fleche{
+    margin-bottom: 100%;
+}
+
+.img-fleche {
+    width: 29px;
+    position: fixed;
+    bottom: 150px;
+    opacity: 1;
+    visibility: visible;
+    margin-bottom: 0%;
+    transition: all 0.8s ease-out;
+
+}
 .img-rubrique#User{
     opacity: 1;
     visibility: visible;
@@ -184,18 +201,20 @@ section.left_fixed_navigation .img-rubrique{
     visibility: visible;
 }
 section.left_fixed_navigation:hover .rubrique-title{
-    opacity: 0;
-    visibility: hidden;
+
+    margin-bottom: 100%;
+
 }
 
+
 .rubrique-title{
-    transition: opacity 0.2s, visibility 0.2s;
-    opacity: 1;
+    transition: all 0.4s ease-out;
     visibility: visible;
     transform: rotate(270deg);
-    color: #FF7D2C;
+    color: #fe7400;
     position: fixed;
-    bottom: 40px;
+    margin-bottom: 0%;
+    bottom: 60px;
 }
 
 
@@ -228,7 +247,7 @@ section.left_fixed_navigation:hover .rubrique-title{
     visibility: hidden;
     width: 120px;
     background-color: whitesmoke;
-    color: #FF7D2C;
+    color: #fe7400;
     text-align: center;
     padding: 5px 0;
   
@@ -246,7 +265,7 @@ section.left_fixed_navigation:hover .rubrique-title{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 20%; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -254,15 +273,33 @@ section.left_fixed_navigation:hover .rubrique-title{
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgb(0 0 0 / 68%);
-        text-align: center;
+    text-align: center;
   }
 
   .container-login{
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
-      text-align: center;
   }
+.input_edit label{
+font-size: 10px;
+text-align: left;
+}
+
+.input_edit{
+    width: 100%;
+     }
+
+.input_edit p{
+   margin: 2rem 0 2rem 0;
+   text-align: center;
+
+    }
+
+.input-loggin{
+    margin: 1rem 0 1rem 0;
+    text-align: left;
+}
 
   .input_inscription input{
       width: 180px;
@@ -274,12 +311,12 @@ section.left_fixed_navigation:hover .rubrique-title{
 
   }
   .input_edit input{
-    width: 180px;
-    height: 20px;
-    border-radius: 5px;
-    background: #1a1c22c4;
+    width: 100%;
+    height: 30px;
+    background: #ffffff;
     color: white;
   font-size: 15px;
+  border: 0;
 
 }
 
@@ -287,7 +324,7 @@ button#new_member{
     margin-top: 1rem;
     width: 100%;
     height: 30px;
-    background: #ffff0a;
+    background: #fe7400;
     border: 0px;
     color: black;
     font-size: 15px;
@@ -307,28 +344,25 @@ button#connexion{
 
   /* Modal Content */
   .modal-content, .AddArticle-content {
-    background-color: #fefefe;
+    background-color: #272c38;
     margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 60%;
+    padding: 2rem;
+        width: 30%;
+    color: white;
   }
   
   /* The Close Button */
   .close {
     color: rgb(14, 14, 14);
     float: right;
-    font-size: 35px;
-    font-weight: bold;
-    
- 
-    position: relative;
-    top: -21px;
-    right: -21px;
-    padding: 0.5rem 1rem .5rem 1rem;
+    font-size: 30px;
+    position: absolute;
     border-radius: 0 0 0px 12px;
   }
-  
+  .close_bloc{
+      width: 100%;
+
+  }
   .close:hover,
   .close:focus {
     color: #b45931;
@@ -500,7 +534,7 @@ h3.auteur_comment{
 
 .auteur_comment a{
    
-    color: #FF7D2C;
+    color: #fe7400;
  
     font-size: 15px;
 
@@ -523,7 +557,7 @@ button#new_comment{
     width: 93%;
     margin-top: 1rem;
     height: 30px;
-    background: #ffff0a;
+    background: #43be00;
     border: 0px;
     border-radius: 5px;
     color: black;
@@ -536,7 +570,7 @@ button#new_comment{
 
 button#new_comment:hover{
  
-    background: #cbcb0b;
+    background: #42be0080;
 
 }
 
@@ -597,7 +631,7 @@ font-size: 20px;
 
 .edit-profil{
 
-    background:#FF7D2C; 
+    background:#fe7400; 
     color:white; border:0; 
     padding: 0.5rem; 
     border-radius: 5px;

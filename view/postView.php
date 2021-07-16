@@ -1,3 +1,4 @@
+
 <section id="container-welcoming" class="container-welcoming">
     <h1>Bienvenue $name, Retrouve les dernieres créations de nos contributeurs</h1>
     <p>Notre réseau social unique en son genre est destiné aux créateurs de contenues qui travaillent dans les

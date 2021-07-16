@@ -8,7 +8,7 @@
                 <div class="meta_post">
                     <h1>TITRE DE L'ARTICLE</h1>
                     <p style="font-size: 10px;">Pulication :<em>16/09/2021</em></p>
-                    <p style="color: #FF7D2C;">@Charley_Geoffroy</p>
+                    <p style="color: #FF7D2C;"><a href="profil.php">@Charley_Geoffroy</a></p>
 
                     <p class="description_article">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui,
                         voluptates maiores. Suscipit obcaecati neque sint recusandae! Quas, ratione impedit adipisci
