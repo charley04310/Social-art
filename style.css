@@ -265,7 +265,7 @@ section.left_fixed_navigation:hover .rubrique-title{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 20%; /* Location of the box */
+    padding-top: 10%; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -291,10 +291,13 @@ text-align: left;
      }
 
 .input_edit p{
-   margin: 2rem 0 2rem 0;
+   
    text-align: center;
 
     }
+.create_account{
+    margin-top: 2rem;
+}
 
 .input-loggin{
     margin: 1rem 0 1rem 0;
@@ -349,15 +352,18 @@ button#connexion{
     padding: 2rem;
         width: 30%;
     color: white;
+    border-radius: 3px;
+
   }
   
   /* The Close Button */
   .close {
-    color: rgb(14, 14, 14);
+    color: rgb(255, 255, 255);
     float: right;
     font-size: 30px;
-    position: absolute;
+    position: relative;
     border-radius: 0 0 0px 12px;
+    top: -15px;
   }
   .close_bloc{
       width: 100%;

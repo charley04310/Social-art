@@ -12,15 +12,14 @@
                 </div>
 
 <img src="img/logo_socialart.svg" alt="social_art">
-<p>CONNEXION</p>
 
                 <div class="input-loggin">
-                    <label for="name"><em>Votre Identifiant</em></label><br />
+                    <label for="name"><em>Identifiant</em></label><br />
                     <input type="text" id="Id_Name" name="Longin-id" required>
                 </div>
 
                 <div  class="input-loggin">
-                    <label for="text"><em>Votre Mot de Passe</em></label><br />
+                    <label for="text"><em>Mot de Passe</em></label><br />
                     <input type="password" id="password" name="password" required>
                 </div>
 
@@ -30,6 +29,7 @@
 
                 <div class="create_account">
                     <p>Vous n'avez pas encore de Compte ? <a href="">Enregistrez-vous !</a></p>
+                   <p>Vous avez oubliez <a href="">Mot de passe ?</a></p>
                 </div>
             </div>
 
