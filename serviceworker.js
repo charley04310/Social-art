@@ -1,6 +1,6 @@
 var cacheName = 'todolist-PWA-v1.2';
 var appShellFiles = [
-  '/index.html'
+  '/index.php'
 ];
 
 self.addEventListener('install', (e) => {
