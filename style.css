@@ -150,6 +150,7 @@ section.left_fixed_navigation {
     background: #7f88a0;
     transition: all 1s;
     align-items: center;
+    bottom: 0;
 }
 
 section.left_fixed_navigation:hover{
@@ -317,7 +318,7 @@ text-align: left;
     width: 100%;
     height: 30px;
     background: #ffffff;
-    color: white;
+    color: black;
   font-size: 15px;
   border: 0;
 

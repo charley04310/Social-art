@@ -14,6 +14,9 @@ try {
   echo "Connection failed: " . $e->getMessage();
 }
 
+
+
 };
 
 dbConnect();
+

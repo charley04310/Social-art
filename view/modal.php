@@ -12,10 +12,10 @@
                 </div>
 
 <img src="img/logo_socialart.svg" alt="social_art">
-
+        <form action="controler/Login.php" method="post">
                 <div class="input-loggin">
                     <label for="name"><em>Identifiant</em></label><br />
-                    <input type="text" id="Id_Name" name="Longin-id" required>
+                    <input type="text" id="Id_Name" name="username" required>
                 </div>
 
                 <div  class="input-loggin">
@@ -24,7 +24,7 @@
                 </div>
 
                 <div>
-                    <button type="button" id="connexion">Se connecter</button>
+                    <input type="submit" id="connexion" value="Se connecter">
                 </div>
 
                 <div class="create_account">
@@ -32,7 +32,7 @@
                    <p>Vous avez oubliez <a href="">Mot de passe ?</a></p>
                 </div>
             </div>
-
+        </form>
            
         </div>
     </div>
