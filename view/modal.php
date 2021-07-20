@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="create_account">
-                    <p>Vous n'avez pas encore de Compte ? <a href="">Enregistrez-vous !</a></p>
+                    <p>Vous n'avez pas encore de Compte ? <a href="inscription.php">Enregistrez-vous !</a></p>
                    <p>Vous avez oubliez <a href="">Mot de passe ?</a></p>
                 </div>
             </div>

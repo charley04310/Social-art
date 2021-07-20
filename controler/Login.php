@@ -1,4 +1,24 @@
 <?php 
+
+function inscription(){
+    // Vérification de la validité des informations
+
+// Hachage du mot de passe
+$pass_hache = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+
+// Insertion
+$req = $bdd->prepare('INSERT INTO membres(pseudo, pass, email, date_inscription) VALUES(:pseudo, :pass, :email, CURDATE())');
+$req->execute(array(
+    'pseudo' => $pseudo,
+    'pass' => $pass_hache,
+    'email' => $email));
+
+}
+
+
+
+
+
 //  Récupération de l'utilisateur et de son pass hashé
 $servername = "localhost";
 $username = "root";
@@ -12,7 +32,8 @@ try {
 } catch(PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
 }
-$pseudo = '';
+
+
 $req = $conn->prepare('SELECT Pseudo_Users, Mdp_Users FROM Utilisateurs');
 $req -> execute(array(
     'Pseudo_Users' => $pseudo
@@ -21,7 +42,6 @@ $req -> execute(array(
 
 $resultat = $req->fetch();
 
-var_dump($resultat);
 
 // Comparaison du pass envoyé via le formulaire avec la base
 $isPasswordCorrect = password_verify($_POST['password'], $resultat['Mdp_Users']);
@@ -34,8 +54,8 @@ else
 {
     if ($isPasswordCorrect) {
         session_start();
-        $_SESSION['id'] = $resultat['id'];
-        $_SESSION['pseudo'] = $pseudo;
+        $_POST['password'] = $resultat['password'];
+        $_POST['username'] = $pseudo;
         echo 'Vous êtes connecté !';
     }
     else {

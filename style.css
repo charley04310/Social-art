@@ -670,6 +670,80 @@ font-size: 20px;
     margin-left: 7rem;
 }
 
+/*----------------------------------- ENREGISTRER UN UTILISATEUR ---------------------------------- */
+.container_adduser{
+    width: 350px;
+    padding: 2rem;
+    background: #272c38;
+    height: 450px;
+
+
+}
+
+.description_adduser{
+    width: 414px;
+    background-image:url('img/pandart.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 514px;
+
+}
+.description_adduser h1{
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 2rem;
+}
+.background_adduser_description{
+    width: 100%;
+    height: 100%;
+    background:#282d3969 ;
+
+}
+.container_adduser input{
+    width: 100%;
+    height: 25px;
+}
+.add{
+    margin-top: 1rem;
+
+}
+.new_user{
+    padding-top: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    
+    
+}
+.new_user label {
+    color: white; 
+
+}
+
+.submit_user{
+    padding-top: 1rem;
+}
+ 
+
+.validate_condition{
+    display: flex;
+    margin-top: 1rem;
+}
+
+.validate_condition p{
+    margin-left: 1rem;
+}
+
+.validate_condition input{
+    width: auto;
+height: 15px;}
+
+
+
+
   @media (max-width: 1245px) {
     .input_edit_inf{
         display: block;
