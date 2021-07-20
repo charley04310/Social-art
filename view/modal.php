@@ -23,6 +23,12 @@
                     <input type="password" id="password" name="password" required>
                 </div>
 
+                <div class="memoriser_conn">
+                    <input type="checkbox" id="memoriser_conn" name="conditions">
+                    <label for="text"><em>Mémoriser mes identifiants</em></label>
+
+                </div>
+            
                 <div>
                     <input type="submit" id="connexion" value="Se connecter">
                 </div>

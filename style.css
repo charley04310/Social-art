@@ -111,8 +111,7 @@ h1{
 .login-button{
     border: 0;
     transition: color 1s;
-    background: #fe7400;
-    color: white;
+    color: #fe7400;
     border-radius: 15px;
     padding: 0.5rem;
 }
@@ -120,7 +119,6 @@ h1{
 button.login-button:hover{
     color: #fe7400;
     background: rgba(255, 255, 255, 0);
-    border: 1px solid #fe7400;
 }
 
 #set_modal{
@@ -324,6 +322,16 @@ text-align: left;
   font-size: 15px;
   border: 0;
 
+}
+
+.memoriser_conn{
+    display: flex;
+}
+
+.memoriser_conn input{
+width: auto;
+height: auto;
+margin-bottom: 1rem;
 }
 
 button#new_member{

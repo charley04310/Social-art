@@ -58,7 +58,7 @@
 
 
 
-                <button class="login-button" id="Login" onclick="SetModal()">SE CONNTECTER</button>
+                <button class="login-button" id="Login" onclick="SetModal()">connexion</button>
 
 
 

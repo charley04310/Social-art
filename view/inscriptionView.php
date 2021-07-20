@@ -1,6 +1,6 @@
 
 
-<form class="new_user" action="controler/Login.php" method="post">
+<form class="new_user" action="controler/registrer.php" method="post">
 
     <div class="description_adduser">
         <div class="background_adduser_description">
@@ -28,7 +28,7 @@
 
         <div  class="add Email">
             <label for="text"><em>Email</em></label><br />
-            <input type="password" id="Add_Email" name="AddEmail" required>
+            <input type="email" id="Add_Email" name="AddEmail" required>
         </div>
 
         <div class="validate_condition">
