@@ -4,8 +4,6 @@
 
     <div class="description_adduser">
         <div class="background_adduser_description">
-            <h1>Bienvenue dans votre Espace d'inscription ! </h1>
-
         </div>
 
     </div>
