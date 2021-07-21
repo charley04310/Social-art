@@ -9,7 +9,6 @@
     </div>
 
     <div class="container_adduser">
-
         <div class="add User">
             <label for="name"><em>Identifiant</em></label><br />
             <input type="text" id="Add_Name" name="AddUsername" required>

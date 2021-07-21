@@ -93,6 +93,7 @@ function darkMode(){
     var toggled =false;
    
 var welcoming = document.getElementById("container-welcoming");
+
 var navLeftFixed = document.getElementById("left_fixed_navigation");
 var headerContainer = document.getElementById("header-container");
 var switchHolder = document.getElementById("outer-div");
@@ -100,6 +101,7 @@ var switchButton = document.getElementById("inner-div");
 
 switchButton.addEventListener('click',function () {
     if(!toggled){
+
     switchButton.style.transition =".4s all ease-in-out";
     switchButton.style.transform ="translateX(25px)";
     switchButton.style.backgroundColor = "white";
