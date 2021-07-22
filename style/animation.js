@@ -93,15 +93,14 @@ function darkMode(){
     var toggled =false;
    
 var welcoming = document.getElementById("container-welcoming");
-
 var navLeftFixed = document.getElementById("left_fixed_navigation");
 var headerContainer = document.getElementById("header-container");
 var switchHolder = document.getElementById("outer-div");
 var switchButton = document.getElementById("inner-div");
+var titreUn = document.getElementById("h1");
 
 switchButton.addEventListener('click',function () {
     if(!toggled){
-
     switchButton.style.transition =".4s all ease-in-out";
     switchButton.style.transform ="translateX(25px)";
     switchButton.style.backgroundColor = "white";
@@ -109,7 +108,7 @@ switchButton.addEventListener('click',function () {
     document.body.style.backgroundColor = "#1d222f";
     headerContainer.style.backgroundColor = "#262b37"
     navLeftFixed.style.backgroundColor = "#262b37";
-
+    titreUn.style.backgroundColor ="white";
     toggled = true;
     }else{
 
