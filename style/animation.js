@@ -86,9 +86,47 @@ function EditInf(){
     }
 }
 
+function darkMode(){
+  var toggled =false;
+ 
+var welcoming = document.getElementById("container-welcoming");
+var navLeftFixed = document.getElementById("left_fixed_navigation");
+var headerContainer = document.getElementById("header-container");
+var switchHolder = document.getElementById("outer-div");
+var switchButton = document.getElementById("inner-div");
 
+switchButton.addEventListener('click',function () {
+  if(!toggled){
+  switchButton.style.transition =".4s all ease-in-out";
+  switchButton.style.transform ="translateX(25px)";
+  switchButton.style.backgroundColor = "white";
+  switchHolder.style.border= "2px solid white";
+  document.body.style.backgroundColor = "#1d222f";
+  headerContainer.style.backgroundColor = "#262b37"
+  navLeftFixed.style.backgroundColor = "#262b37";
+  welcoming.style.color ="white";
+  toggled = true;
+  }else{
 
+  switchButton.style.transition =".4s all ease-in-out";
 
+  headerContainer.style.backgroundColor = "#d6d6d6"
+  navLeftFixed.style.backgroundColor = "#707070";
+
+  switchButton.style.transform ="translateX(4px)";
+  switchButton.style.backgroundColor = "#f07d2d";
+  switchHolder.style.border= "2px solid #f07d2d";
+  document.body.style.backgroundColor = "white";
+  headerContainer.style.backgroundColor = "white";
+  welcoming.style.color = "black";
+
+  toggled = false;
+  }
+});
+
+}
+
+/*
 function darkMode(){
     var toggled =false;
    
@@ -97,7 +135,7 @@ var navLeftFixed = document.getElementById("left_fixed_navigation");
 var headerContainer = document.getElementById("header-container");
 var switchHolder = document.getElementById("outer-div");
 var switchButton = document.getElementById("inner-div");
-var titreUn = document.getElementById("h1");
+var titreUn = document.getElementById("h1")
 
 switchButton.addEventListener('click',function () {
     if(!toggled){
@@ -108,7 +146,7 @@ switchButton.addEventListener('click',function () {
     document.body.style.backgroundColor = "#1d222f";
     headerContainer.style.backgroundColor = "#262b37"
     navLeftFixed.style.backgroundColor = "#262b37";
-    titreUn.style.backgroundColor ="white";
+    titreUn.style.bac
     toggled = true;
     }else{
 
@@ -129,3 +167,4 @@ switchButton.addEventListener('click',function () {
 });
 
 }
+*/
