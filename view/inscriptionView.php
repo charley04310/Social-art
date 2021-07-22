@@ -1,6 +1,49 @@
 
 
+
+<div class="container-err">
+
+
+            <?php if(isset($_GET['reg_err'])){
+
+            $err = htmlspecialchars($_GET['reg_err']);
+            $tab_err =[];
+            switch($err)
+            {
+                case 'usernameEmpty':        
+                    $tab_err = '<span style="color:red;"><strong>Champ(s)</strong> vide(s) !</span>';               
+                break;
+
+                case 'usernameTaken':
+                    $tab_err = '<span style="color:red;"><strong>Pseudo</strong> déjà pris !</span>';         
+                break;
+
+                case 'emailTaken':
+                    $tab_err = '<span style="color:red;"><strong>Email</strong> déjà pris !</span>';
+                break;
+
+                case 'emailWrong':
+                    $tab_err = '<span style="color:red;"><strong>Email</strong> non valide !</span>';
+                break;
+
+                case 'passwordWrong':
+                    $tab_err = '<span style="color:red;"><strong>Mots de passes</strong> incorrects !</span>';
+                break;
+
+                case 'conditionWrong':
+                    $tab_err = '<span style="color:red;"><strong>Les Conditions générals</strong> doivent être accéptés !</span>';
+                break;
+                
+
+            } 
+            }
+
+            ?>
+</div>
+
+
 <form class="new_user" action="controler/registrer.php" method="post">
+
 
     <div class="description_adduser">
         <div class="background_adduser_description">
@@ -9,6 +52,7 @@
     </div>
 
     <div class="container_adduser">
+        <?php if(!empty($tab_err)){echo $tab_err;} ?>
         <div class="add User">
             <label for="name"><em>Identifiant</em></label><br />
             <input type="text" id="Add_Name" name="AddUsername" required>

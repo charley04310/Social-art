@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@100;300&display=swap"
         rel="stylesheet">
     <script src="style/animation.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>TITRE</title>
@@ -23,6 +24,7 @@
 </head>
 
 <body>
+    
 
     <header>
         <div id="header-container" class="header-container">
@@ -52,18 +54,17 @@
                     </div>
                 </div>
            
-
-
-                <img src="img/AddPost.svg" alt="AddPost" id="AddPost" onclick="ModalAddArticle()">
-                <img src="img/User.svg" alt="AddPost" class="img-rubrique" id="User" onclick="EditInf()">
-
+                <?php if(isset($_SESSION['user'])){ 
+                echo '<img src="img/AddPost.svg" alt="AddPost" id="AddPost" onclick="ModalAddArticle()">
+                <a href="profil.php"><img src="img/User.svg" alt="AddPost" class="img-rubrique" id="User"></a>';
+                    } ?>
 
 
                 <button class="login-button" id="Login" onclick="<?php if(!isset($_SESSION['user'])){
                     echo 'SetModal()';}else{echo "location.href='controler/deconnexion.php'";} ?>">
 
                 <?php if(isset($_SESSION['user'])){
-                   echo 'Déconnexion'; }else{echo 'Connexion';
+                   echo '<span style="color:red;">Déconnexion</span>'; }else{echo '<span style="color:green;">Connexion</span>';
                    }?></button>
 
 
