@@ -1,6 +1,4 @@
 <?php
-
-function dbConnect(){
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -12,7 +10,7 @@ try {
 
 } catch(PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
-} };
+} 
 
-dbConnect();
+
 

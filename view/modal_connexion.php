@@ -1,4 +1,8 @@
+
+
 <section class="popup_log">
+
+
 <div id="myModal" class="modal">
     <div class="modal-content">
 
@@ -13,6 +17,54 @@
 
 <img src="img/logo_socialart.svg" alt="social_art">
         <form action="controler/Login.php" method="post">
+        <?php 
+
+if(isset($_GET['login_err'])){
+
+    $err = htmlspecialchars($_GET['login_err']);
+
+    switch($err)
+    {
+        case 'password':
+            ?>
+            <div style="color:red;">
+                <strong>Erreur</strong> Mot de passe incorrect
+            </div>
+        <?php
+        break;
+
+        case 'username':
+            ?>
+            <div style="color:red;">
+                <strong>Erreur</strong> pseudo incorrect
+            </div>
+        <?php
+        break;
+
+        case 'feed':
+            ?>
+            <div style="color:red;">
+                <strong>Erreur</strong> Champ vide incorrect
+            </div>
+        <?php
+        break;
+
+    } 
+} else{
+    if(isset($_GET['login'])){
+        echo ' 
+        <script> window.onload = function() {
+            SetModal();
+          };</script>
+        <div style="color:green;">
+        <strong>Succes</strong> connexion
+    </div>';
+    }
+
+}
+
+?>
+
                 <div class="input-loggin">
                     <label for="name"><em>Identifiant</em></label><br />
                     <input type="text" id="Id_Name" name="username" required>
