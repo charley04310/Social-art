@@ -109,17 +109,14 @@ switchButton.addEventListener('click',function () {
   }else{
 
   switchButton.style.transition =".4s all ease-in-out";
-
   headerContainer.style.backgroundColor = "#d6d6d6"
   navLeftFixed.style.backgroundColor = "#707070";
-
   switchButton.style.transform ="translateX(4px)";
   switchButton.style.backgroundColor = "#f07d2d";
   switchHolder.style.border= "2px solid #f07d2d";
   document.body.style.backgroundColor = "white";
   headerContainer.style.backgroundColor = "white";
   welcoming.style.color = "black";
-
   toggled = false;
   }
 });
