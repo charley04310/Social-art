@@ -21,7 +21,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
     //on prépare la requete
     $verification_Connexion = $conn->prepare('SELECT Pseudo_Users, Mdp_Users FROM Utilisateurs WHERE Pseudo_Users= ?');
-    //On execute la requete avec le parametre rentré par l'utilisateur
+    //On execute la requete avec le username pour verifier si il existe 
     $verification_Connexion->execute(array($username));
     // on enregistre les donnée dans la variable data 
     $data_login = $verification_Connexion->fetch();

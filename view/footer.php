@@ -4,7 +4,6 @@
 <script>
     window.onload = function () {
         darkMode();
-        SetModal();
         ModalAddArticle();
         EditInf()
     }

@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +59,12 @@
 
 
 
-                <button class="login-button" id="Login" onclick="SetModal()">connexion</button>
+                <button class="login-button" id="Login" onclick="<?php if(!isset($_SESSION['user'])){
+                    echo 'SetModal()';}else{echo "location.href='controler/deconnexion.php'";} ?>">
+
+                <?php if(isset($_SESSION['user'])){
+                   echo 'Déconnexion'; }else{echo 'Connexion';
+                   }?></button>
 
 
 

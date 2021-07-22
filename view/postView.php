@@ -1,6 +1,8 @@
 
 <section id="container-welcoming" class="container-welcoming">
-    <h1>Bienvenue $name, Retrouve les dernieres créations de nos contributeurs</h1>
+    <h1> <?php if(isset($_SESSION['user'])){
+        echo 'Bienvenue <b>'. $_SESSION['user'] . '</b>';
+    } ?> Retrouve les dernieres créations de nos contributeurs</h1>
     <p>Notre réseau social unique en son genre est destiné aux créateurs de contenues qui travaillent dans les
         métiers de digital</p>
 

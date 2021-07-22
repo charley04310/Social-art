@@ -276,7 +276,9 @@ section.left_fixed_navigation:hover .rubrique-title{
     background-color: rgb(0 0 0 / 68%);
     text-align: center;
   }
-
+.show-modal{
+    display: block; /* Hidden by default */
+}
   .container-login{
       display: flex;
       flex-wrap: wrap;
