@@ -76,7 +76,7 @@ if(isset($_GET['login_err'])){
                 </div>
 
                 <div class="memoriser_conn">
-                    <input type="checkbox" id="memoriser_conn" name="conditions">
+                    <input type="checkbox" id="remember_checkbox" name="conditions">
                     <label for="text"><em>Mémoriser mes identifiants</em></label>
 
                 </div>

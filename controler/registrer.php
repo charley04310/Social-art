@@ -23,7 +23,7 @@ function test_input($data)
     return $data;
 }
 
-// On initialise les variables
+// On initialise les variables d'enregistrement
 
 $pseudo = test_input($_POST['AddUsername']);
 $email = test_input($_POST['AddEmail']);
@@ -41,7 +41,6 @@ if (isset($pseudo)) {
     $req->execute([$pseudo]);
     $user = $req->fetch();
    
-   // $row = $user->rowCount();
 
     if ($user == false) {
 
@@ -74,6 +73,7 @@ if (isset($pseudo)) {
                         echo'succes papa';
 
                     } else {
+<<<<<<< HEAD
                         header('Location:../index.php?reg_err=conditionWrong');
                     }
                 } else {
@@ -90,4 +90,22 @@ if (isset($pseudo)) {
     }
 } else {
     header('Location:../index.php?reg_err=usernameEmpty');
+=======
+                        header('Location:../inscription.php?reg_err=conditionWrong');
+                    }
+                } else {
+                    header('Location:../inscription.php?reg_err=passwordWrong');
+                }
+            } else {
+                header('Location:../inscription.php?reg_err=emailWrong');
+            }
+        } else {
+            header('Location:../inscription.php?reg_err=emailTaken');
+        }
+    } else {
+        header('Location:../inscription.php?reg_err=usernameTaken');
+    }
+} else {
+    header('Location:../inscription.php?reg_err=usernameEmpty');
+>>>>>>> 280c0b11a4066bde71bc2927f06bd61f03c97f5b
 }

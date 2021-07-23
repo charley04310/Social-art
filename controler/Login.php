@@ -34,8 +34,23 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
         if (password_verify($password, $data_login['Mdp_Users'])) {
 
+            if(empty($_POST['remember_checkbox'])){
+
             $_SESSION['user'] = $data_login['Pseudo_Users'];
+            setcookie('pseudo', $username, 30);
+            setcookie('password', $password, 30);
             header('Location:../index.php?login=succes');
+            }
+                else{
+
+
+            $remember_checkbox = $_POST['remember_checkbox'];            
+            $_SESSION['user'] = $data_login['Pseudo_Users'];
+            setcookie('pseudo', $username, time()+ 3600*24*7);
+            setcookie('password', $password, time()+ 3600*24*7);
+            header('Location:../index.php?login=succes');
+        
+                }
 
         } else {
             header('Location:../index.php?login_err=password');
