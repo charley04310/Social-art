@@ -20,31 +20,25 @@ function SetModal(){
 }
 
 
-
 function ModalAddArticle(){
 
-    var modal = document.getElementById("AddArticle");
+    var modal = document.querySelector("#AddArticle");
     
     // Get the button that opens the modal
-    var btn = document.getElementById("AddPost");
+    modal.classList.add("show-AddPost");
     
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[1];
-    
-    // When the user clicks the button, open the modal 
-    btn.onclick = function() {
-      modal.style.display = "block";
-    }
+    var span = document.getElementById("close_add");
     
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
-      modal.style.display = "none";
+      modal.classList.remove("show-AddPost");  
     }
     
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
       if (event.target == modal) {
-        modal.style.display = "none";
+        modal.classList.remove("show-AddPost");  
       }
     }
 }

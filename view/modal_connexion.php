@@ -99,21 +99,6 @@ if(isset($_GET['login_err'])){
 </section>
 
 
-<section class="ModalAddArticle">
-
-        <!-- The Modal -->
-        <div id="AddArticle" class="modal">
-
-            <!-- Modal content -->
-            <div class="AddArticle-content">
-                <span class="close">&times;</span>
-                <p>Some text in the Modal..</p>
-            </div>
-
-        </div>
-
-    </section>
-
 
     <section class="modalEditInf">
 

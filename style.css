@@ -129,11 +129,11 @@ button.login-button:hover{
 #User{
     margin-right: 3rem;
     margin-left: 1rem;
-    height: 25px;
+    height: 20px;
 }
 
 #AddPost{
-    height: 25px;
+    height: 19px;
 }
 
 
@@ -277,7 +277,11 @@ section.left_fixed_navigation:hover .rubrique-title{
     text-align: center;
   }
 .show-modal{
-    display: block; /* Hidden by default */
+    display: block; 
+}
+.show-AddPost{
+    display: block; 
+
 }
   .container-login{
       display: flex;

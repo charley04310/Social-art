@@ -6,12 +6,10 @@
     window.onload = function () {     
         <?php if(!empty($_GET['login_err'])){
         echo  'SetModal();
-        darkMode();
-        ModalAddArticle();
-        EditInf()';
+        darkMode()';
         }else{  echo 'darkMode();
-            ModalAddArticle();
-            EditInf()';}?>
+            
+           ';}?>
 
     }
     /******************** Load Service Worker ****************************************/
