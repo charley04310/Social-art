@@ -6,7 +6,7 @@ $username = "root";
 $password = "root";
 
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=SocialArt", $username, $password);
+    $conn = new PDO("mysql:host=$servername;dbname=socialart", $username, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
@@ -44,5 +44,5 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         header('Location:../index.php?login_err=username');
     }
 } else {
-    header('Location:index.php?login_err=feed');
+    header('Location:../index.php?login_err=feed');
 }

@@ -6,7 +6,7 @@ $username = "root";
 $password = "root";
 
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=SocialArt", $username, $password);
+    $conn = new PDO("mysql:host=$servername;dbname=socialart", $username, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
@@ -74,20 +74,20 @@ if (isset($pseudo)) {
                         echo'succes papa';
 
                     } else {
-                        header('Location:index.php?reg_err=conditionWrong');
+                        header('Location:../index.php?reg_err=conditionWrong');
                     }
                 } else {
-                    header('Location:index.php?reg_err=passwordWrong');
+                    header('Location:../index.php?reg_err=passwordWrong');
                 }
             } else {
-                header('Location:index.php?reg_err=emailWrong');
+                header('Location:../index.php?reg_err=emailWrong');
             }
         } else {
-            header('Location:index.php?reg_err=emailTaken');
+            header('Location:../index.php?reg_err=emailTaken');
         }
     } else {
-        header('Location:index.php?reg_err=usernameTaken');
+        header('Location:../index.php?reg_err=usernameTaken');
     }
 } else {
-    header('Location:index.php?reg_err=usernameEmpty');
+    header('Location:../index.php?reg_err=usernameEmpty');
 }
