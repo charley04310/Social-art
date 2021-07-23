@@ -32,7 +32,7 @@
 
             <div class="content-left">
                 <div class="logo">
-                    <a href="index.php"><img src="img/logo_socialart.svg" alt="" width="160px"></a>
+                    <a href="index.php"><img src="img/logo_socialart.svg" alt="" width="100px"></a>
                 </div>
 
                 <!--<img src="img/logo_socialart.png" alt="">-->
@@ -55,8 +55,9 @@
                 </div>
            
                 <?php if(isset($_SESSION['user'])){ 
-                echo '<img src="img/AddPost.svg" alt="AddPost" id="AddPost" onclick="ModalAddArticle()">
+                echo '<img src="img/AddPost.svg" alt="AddPost" height="20px" id="AddPost" onclick="ModalAddArticle()">
                 <a href="profil.php"><img src="img/User.svg" alt="AddPost" class="img-rubrique" id="User"></a>';
+                require 'modal_Addpost.php';
                     } ?>
 
 
