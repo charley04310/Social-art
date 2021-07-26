@@ -1,14 +1,12 @@
 <?php
-$servername = "localhost";
+$servername = "localhost:3306";
 $username = "root";
-$password = "root";
+$password = "";
 
 try {
-<<<<<<< HEAD
+
   $conn = new PDO("mysql:host=$servername;dbname=socialart", $username, $password);
-=======
-  $conn = new PDO("mysql:host=$servername;dbname=social art", $username, $password);
->>>>>>> 5519748f379318fce13040dda85320838092afbc
+
   // set the PDO error mode to exception
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
