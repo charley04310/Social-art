@@ -75,8 +75,8 @@ if(isset($_POST['recup_submit'],$_POST['recup_mail'])) {
          </body>
          </html>
          ';
-         mail($recup_mail, "Récupération de mot de passe - Votresite", $message, $header);
-            header("Location:http://127.0.0.1/path/recuperation.php?section=code");
+         mail($recup_mail, "Récupération de mot de passe - Social Art", $message, $header);
+            header("Location:../index.php/recuperation.php?section=code");
          } else {
             $error = "Cette adresse mail n'est pas enregistrée";
          }
