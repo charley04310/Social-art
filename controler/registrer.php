@@ -1,7 +1,7 @@
 <?php
 // connection BDD
 
-$servername = "localhost:3306";
+$servername = "localhost";
 $username = "root";
 $password = "";
 
