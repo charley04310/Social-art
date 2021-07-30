@@ -26,12 +26,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     // on enregistre les donnée dans la variable data 
     $data_login = $verification_Connexion->fetch();
     // On compte le nombre d'occurence trouvé
-
+    
     //$row = $verification_Connexion->rowCount();
     // Si le pseudo a été trouvé on vérifie de mot de passe
     if ($data_login) {
        // $password = password_hash($password, PASSWORD_DEFAULT);
-
         if (password_verify($password, $data_login['Mdp_Users'])) {
 
             if(empty($_POST['remember_checkbox'])){
