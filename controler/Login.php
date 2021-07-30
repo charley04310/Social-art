@@ -26,30 +26,16 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     // on enregistre les donnée dans la variable data 
     $data_login = $verification_Connexion->fetch();
     // On compte le nombre d'occurence trouvé
-    
+
     //$row = $verification_Connexion->rowCount();
     // Si le pseudo a été trouvé on vérifie de mot de passe
     if ($data_login) {
        // $password = password_hash($password, PASSWORD_DEFAULT);
+
         if (password_verify($password, $data_login['Mdp_Users'])) {
 
-            if(empty($_POST['remember_checkbox'])){
-
             $_SESSION['user'] = $data_login['Pseudo_Users'];
-            setcookie('pseudo', $username, 30);
-            setcookie('password', $password, 30);
             header('Location:../index.php?login=succes');
-            }
-                else{
-
-
-            $remember_checkbox = $_POST['remember_checkbox'];            
-            $_SESSION['user'] = $data_login['Pseudo_Users'];
-            setcookie('pseudo', $username, time()+ 3600*24*7);
-            setcookie('password', $password, time()+ 3600*24*7);
-            header('Location:../index.php?login=succes');
-        
-                }
 
         } else {
             header('Location:../index.php?login_err=password');
@@ -58,5 +44,5 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         header('Location:../index.php?login_err=username');
     }
 } else {
-    header('Location:../index.php?login_err=feed');
+    header('Location:index.php?login_err=feed');
 }
