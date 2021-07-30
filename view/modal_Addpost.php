@@ -1,5 +1,23 @@
 
+<?php
+if(isset($_POST["env"])){
+$logo=$_FILES['photo']['name'];
 
+if($logo!=""){
+require "uploadImage.php";
+if($sortie==false){$logo=$dest_dossier . $dest_fichier;}
+else {$logo="notdid";}
+}
+if($logo!="notdid"){
+echo "upload reussi";
+
+}
+else{
+echo"l'image ne s'est pas enregistré";
+}
+}
+
+?>
 <section class="ModalAddArticle">
 
 <!-- The Modal -->
@@ -10,7 +28,7 @@
         <span class="close" id="close_add">&times;</span>
             <img src="img/logo_socialart.svg" alt="social_art">
             
-        <form action="controler/AddPost.php" method="post">
+        <form action="controler/AddPost.php" method="post" enctype="multipart/form-data">
     
                 <div class="">
                     <label for="Title"><em>Titre de Votre Article</em></label><br />
@@ -41,7 +59,7 @@
 
                 <div class="">
                     <label for="avatar">Choose a profile picture:</label><br>
-                    <input type="file" id="img_post" name="img_post" accept="image/png, image/jpeg">
+                    <input type="file" name="photo" id="photo">
                 </div>
              
                 <div>

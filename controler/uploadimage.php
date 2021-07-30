@@ -9,7 +9,7 @@ $extensions_ok = array('jpg','jpeg','png');
 $typeimages_ok = array(2,3);
 $taille_ko = 3072;
 $taille_max = $taille_ko*3072;
-$dest_dossier = 'images/'; //nom du dossier ou vous allez stocké vos images
+$dest_dossier = 'img_article/'; //nom du dossier ou vous allez stocké vos images
 $dest_fichier="";
 
 
