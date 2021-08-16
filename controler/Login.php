@@ -55,8 +55,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             setcookie('pseudo', $username, time()+ 3600*24*7);
             setcookie('password', $password, time()+ 3600*24*7);
             header('Location:../index.php?login=succes');
-        
-                }
 
         } else {
             header('Location:../index.php?login_err=password');
