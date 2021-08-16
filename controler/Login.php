@@ -13,6 +13,7 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
+
 if (isset($_POST['username']) && isset($_POST['password'])) {
 
     // on verifie les caracteres pour les injections JS (XSS)
@@ -34,29 +35,32 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
         if (password_verify($password, $data_login['Mdp_Users'])) {
 
-            if(empty($_POST['remember_checkbox'])){
+            if(empty($_POST['conditions'])){
+
 
             $_SESSION['user'] = $data_login['Pseudo_Users'];
             $_SESSION['id_user'] = $data_login['Id_Users'];
 
-            setcookie('pseudo', $username, 30);
-            setcookie('password', $password, 30);
-
+          //  setcookie('pseudo', $username, 30);
+           // setcookie('password', $password, 30);
         
             header('Location:../index.php?login=succes');
+
+            }else{
+
+                $_SESSION['user'] = $data_login['Pseudo_Users'];
+                $_SESSION['id_user'] = $data_login['Id_Users'];
+    
+            setcookie('pseudo', $_SESSION['user']);
+            setcookie('password', $password);
+      
+
+            header('Location:../index.php?login=succes?cookie=ok');    
+
             }
-                else{
 
-
-            $remember_checkbox = $_POST['remember_checkbox'];            
-            $_SESSION['user'] = $data_login['Pseudo_Users'];
-            $_SESSION['id_user'] = $data_login['Id_Users'];
-
-            setcookie('pseudo', $username, time()+ 3600*24*7);
-            setcookie('password', $password, time()+ 3600*24*7);
-            header('Location:../index.php?login=succes');
-
-        } else {
+            } else{
+        
             header('Location:../index.php?login_err=password');
         }
     } else {
