@@ -1,6 +1,4 @@
 
-
-
 <div class="container-err">
 
 
@@ -32,9 +30,7 @@
 
                 case 'conditionWrong':
                     $tab_err = '<span style="color:red;"><strong>Les Conditions générals</strong> doivent être accéptés !</span>';
-                break;
-                
-
+                break;        
             } 
             }
 
