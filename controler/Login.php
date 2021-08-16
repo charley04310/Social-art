@@ -20,7 +20,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $password = htmlspecialchars($_POST['password']);
 
     //on prépare la requete
-    $verification_Connexion = $conn->prepare('SELECT Pseudo_Users, Mdp_Users FROM Utilisateurs WHERE Pseudo_Users= ?');
+    $verification_Connexion = $conn->prepare('SELECT Id_Users, Pseudo_Users, Mdp_Users FROM Utilisateurs WHERE Pseudo_Users= ?');
     //On execute la requete avec le username pour verifier si il existe 
     $verification_Connexion->execute(array($username));
     // on enregistre les donnée dans la variable data 
@@ -37,8 +37,12 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             if(empty($_POST['remember_checkbox'])){
 
             $_SESSION['user'] = $data_login['Pseudo_Users'];
+            $_SESSION['id_user'] = $data_login['Id_Users'];
+
             setcookie('pseudo', $username, 30);
             setcookie('password', $password, 30);
+
+        
             header('Location:../index.php?login=succes');
             }
                 else{
@@ -46,6 +50,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
             $remember_checkbox = $_POST['remember_checkbox'];            
             $_SESSION['user'] = $data_login['Pseudo_Users'];
+            $_SESSION['id_user'] = $data_login['Id_Users'];
+
             setcookie('pseudo', $username, time()+ 3600*24*7);
             setcookie('password', $password, time()+ 3600*24*7);
             header('Location:../index.php?login=succes');
