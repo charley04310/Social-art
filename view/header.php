@@ -1,4 +1,5 @@
-<?php session_start();?>
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,6 +26,7 @@
 
 <body>
     
+
 
     <header>
         <div id="header-container" class="header-container">

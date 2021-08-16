@@ -74,6 +74,7 @@ if (password_verify($password, $data_login['Mdp_Users'])) {
 if(empty($_POST['conditions'])){
 
 
+            }else{
 
 
 $_SESSION['user'] = $data_login['Pseudo_Users'];
