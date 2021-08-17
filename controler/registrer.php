@@ -1,12 +1,11 @@
 <?php
 // connection BDD
-
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=socialart", $username, $password);
+    $conn = new PDO("mysql:host=$servername;dbname=SocialArt", $username, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
@@ -37,14 +36,14 @@ $pass_confirmation_hache = $_POST['ConfirmationPassword'];
 // On vérifie si le nom existe dans la base de donée
 
 if (isset($pseudo)) {
-    $req = $conn->prepare("SELECT * FROM utilisateurs WHERE Pseudo_Users=?");
+    $req = $conn->prepare("SELECT * FROM Utilisateurs WHERE Pseudo_Users=?");
     $req->execute([$pseudo]);
     $user = $req->fetch();
    
 
     if ($user == false) {
 
-        $req = $conn->prepare("SELECT * FROM utilisateurs WHERE Email_Users=?");
+        $req = $conn->prepare("SELECT * FROM Utilisateurs WHERE Email_Users=?");
         $req->execute([$email]);
         $user_email = $req->fetch();
         //$row = $user_email->rowCount();
@@ -61,7 +60,7 @@ if (isset($pseudo)) {
                     if (isset($_POST['conditions'])) {
 
                         // On prépare la requete
-                        $req = $conn->prepare("INSERT INTO utilisateurs(Pseudo_Users, Mdp_Users, Email_Users, Id_Permission) 
+                        $req = $conn->prepare("INSERT INTO Utilisateurs(Pseudo_Users, Mdp_Users, Email_Users, Id_Permission) 
                             VALUES (?, ?, ?, ?)");
                         // on place les variables dans les champs de la BDD
                         $inf_user = array(
@@ -73,22 +72,20 @@ if (isset($pseudo)) {
                         echo'succes papa';
 
                     } else {
-
-                        header('Location:../index.php?reg_err=conditionWrong');
+                        header('Location:../inscription.php?reg_err=conditionWrong');
                     }
                 } else {
-                    header('Location:../index.php?reg_err=passwordWrong');
+                    header('Location:../inscription.php?reg_err=passwordWrong');
                 }
             } else {
-                header('Location:../index.php?reg_err=emailWrong');
+                header('Location:../inscription.php?reg_err=emailWrong');
             }
         } else {
-            header('Location:../index.php?reg_err=emailTaken');
+            header('Location:../inscription.php?reg_err=emailTaken');
         }
     } else {
-        header('Location:../index.php?reg_err=usernameTaken');
+        header('Location:../inscription.php?reg_err=usernameTaken');
     }
 } else {
-    header('Location:../index.php?reg_err=usernameEmpty');
-
+    header('Location:../inscription.php?reg_err=usernameEmpty');
 }

@@ -702,7 +702,24 @@ font-size: 20px;
 .galerie-profil h1{
     margin-left: 7rem;
 }
+/*----------------------------------- NEW MDP VIEW ---------------------------------- */
 
+.container_NewMdp{
+    padding-top: 130px;
+
+}
+
+.form_NewMdp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texte_NewMdp {
+    padding: 2rem;
+    width: 40%;
+    font-size: 15px;
+}
 /*----------------------------------- ENREGISTRER UN UTILISATEUR ---------------------------------- */
 .container_adduser{
     width: 350px;

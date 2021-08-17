@@ -86,7 +86,7 @@ if(isset($_GET['login_err'])){
 
                 <div class="create_account">
                     <p>Vous n'avez pas encore de Compte ? <a href="inscription.php">Enregistrez-vous !</a></p>
-                   <p>Vous avez oubliez <a href="view/newMotdePasseview.php">Mot de passe ?</a></p>
+                   <p>Vous avez oubliez <a href="NewMdp.php">Mot de passe ?</a></p>
                 </div>
             </div>
         </form>
