@@ -9,7 +9,6 @@ require('view/modal_connexion.php');
 require('view/newMotdePasseview.php');
 
 
-
 require('view/footer.php');
 
 
