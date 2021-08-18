@@ -1,16 +1,3 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-
-try {
-  $conn = new PDO("mysql:host=$servername;dbname=socialart", $username, $password);
-  // set the PDO error mode to exception
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-} catch(PDOException $e) {
-  echo "Connection failed: " . $e->getMessage();
-} ?>
 
 
 <section id="container-welcoming" class="container-welcoming">
@@ -21,20 +8,27 @@ try {
         métiers de digital</p>
 </section>
 <section class="Article">
+
 <?php
 $req = $conn->query('SELECT * FROM Postes');
 
-while ($data = $req->fetch())
-{
 
-echo '
+while ($data = $req->fetch()){
 
+
+    $ReqdataName = $conn->prepare('SELECT Pseudo_Users FROM Utilisateurs WHERE Id_Users =?');
+    $ReqdataName->execute(array($data['Id_Users']));
+    $ReqdataName = $ReqdataName->fetch();
+    
+    if($ReqdataName){
+        
+        echo '
     <div class="carte_article">
-        <a href="post.php">
+        <a href="post.php?id='. $data['Id_Users'] . '">
             <div class="data_article">
                 <div class="meta_post">
                     <h3>'. $data['Titre_Poste'] .'</h3>
-                    <p> Auteur :' .$data['Id_Poste']. ' </p>
+                    <p> ' .$ReqdataName['Pseudo_Users']. ' </p>
                 </div>
 
                 <div class="meta_logo">
@@ -51,7 +45,9 @@ echo '
                 </div>   
             </div>
         </a>
-    </div>';} // Fin de la boucle des billets
+    </div>';
+    }
+} 
 $req->closeCursor();
 ?>
 </section>

@@ -1,5 +1,8 @@
-<?php session_start();
-?>
+<?php 
+session_start();
+require('modele/dbConnect.php');?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +29,6 @@
 
 <body>
     
-
 
     <header>
         <div id="header-container" class="header-container">

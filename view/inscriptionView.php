@@ -1,7 +1,6 @@
 
 <div class="container-err">
 
-
             <?php if(isset($_GET['reg_err'])){
 
             $err = htmlspecialchars($_GET['reg_err']);

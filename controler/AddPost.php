@@ -1,16 +1,6 @@
 <?php
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "root";
-
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=SocialArt", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
+require('../modele/dbConnect.php');
 
 
     // on verifie les caracteres pour les injections JS (XSS)
@@ -38,8 +28,8 @@ try {
                 // ON EXECUTE LA REQUETE
                 $req->execute($inf_poste);
                 // On redirige vers une page "user"
-                echo'succes papa';
-
+                header("Location:http://localhost:8888/social'art/Social-art/index.php");
+            
             }else{
                 echo'echec pas la bonne catégorie selectionné fdp de batard de merde';
             }
@@ -50,16 +40,5 @@ try {
 
         }
 
-   
-
   }
  
-
-
-
-
-
-
-        // On prépare la requete pour inserer l'article
-
-

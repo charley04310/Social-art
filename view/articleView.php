@@ -1,3 +1,16 @@
+<?php
+
+$req = $conn->prepare('SELECT Titre_Poste, Id_Poste, Cat_Poste, Date_Poste, Id_Users, Desc_Poste FROM Postes WHERE Id_Poste =?');
+$req->execute(array($_GET['id']));
+$data = $req->fetch();
+
+
+$ReqdataName = $conn->prepare('SELECT Pseudo_Users FROM Utilisateurs WHERE Id_Users =?');
+$ReqdataName->execute(array($_GET['id']));
+$dataName = $ReqdataName->fetch();
+
+?>
+
 <section class="container-post">
         <div class="post_view">
 
@@ -6,18 +19,12 @@
 
             <div class="data_post">
                 <div class="meta_post">
-                    <h1>TITRE DE L'ARTICLE</h1>
-                    <p style="font-size: 10px;">Pulication :<em>16/09/2021</em></p>
-                    <p style="color: #FF7D2C;"><a href="profil.php">@Charley_Geoffroy</a></p>
+                    <h1><?=$data['Titre_Poste']?></h1>
+                    <p style="font-size: 10px;">Pulication :<em><?=$data['Date_Poste']?></em></p>
+                    <p style="font-size: 10px;">Catégorie :<em><?=$data['Cat_Poste']?></em></p>
+                    <p style="color: #FF7D2C;"><a href="profil.php">@<?=$dataName['Pseudo_Users']?></a></p>
 
-                    <p class="description_article">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui,
-                        voluptates maiores. Suscipit obcaecati neque sint recusandae! Quas, ratione impedit adipisci
-                        quod voluptatum commodi mollitia, culpa, ut recusandae beatae unde at. Lorem, ipsum dolor sit
-                        amet consectetur adipisicing elit. Velit ea inventore tenetur, culpa recusandae sint amet,
-                        labore rerum, expedita non harum accusamus facilis! Atque porro iste eos tempore molestiae
-                        dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere expedita iste vel
-                        doloremque dolore sequi ipsa, minus quaerat accusamus, suscipit sint ducimus! Pariatur laborum
-                        maxime ea temporibus deleniti inventore alias!</p>
+                    <p class="description_article"><?=$data['Desc_Poste']?></p>
                 </div>
 
                 <div class="comment_post">
