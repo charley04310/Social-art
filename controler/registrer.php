@@ -24,13 +24,13 @@ $pass_confirmation_hache = $_POST['ConfirmationPassword'];
 
 // On vérifie si le nom existe dans la base de donée
 
-if (isset($pseudo)) {
+if (isset($pseudo)){
     $req = $conn->prepare("SELECT * FROM Utilisateurs WHERE Pseudo_Users=?");
     $req->execute([$pseudo]);
     $user = $req->fetch();
    
 
-    if ($user == false) {
+    if ($user == false){
 
         $req = $conn->prepare("SELECT * FROM Utilisateurs WHERE Email_Users=?");
         $req->execute([$email]);
@@ -43,7 +43,6 @@ if (isset($pseudo)) {
 
                 // On verifie la confirmation de mot de pase 
                 if ($pass_hache == $pass_confirmation_hache) {
-
                     $pass_hache = password_hash($_POST['AddPassword'], PASSWORD_DEFAULT);
                     // On verifie que les conditions generals ont été validé
                     if (isset($_POST['conditions'])) {
@@ -52,13 +51,24 @@ if (isset($pseudo)) {
                         $req = $conn->prepare("INSERT INTO Utilisateurs(Pseudo_Users, Mdp_Users, Email_Users, Id_Permission) 
                             VALUES (?, ?, ?, ?)");
                         // on place les variables dans les champs de la BDD
-                        $inf_user = array(
-                            $pseudo, $pass_hache, $email, 1,
-                        );
+                        $inf_user = array($pseudo, $pass_hache, $email, 1,);
                         // ON EXECUTE LA REQUETE
                         $req->execute($inf_user);
-                        // On redirige vers une page "user"
-                        echo'succes papa';
+
+                        if(!empty($req)){
+                            $reqConn = $conn->prepare('SELECT Id_Users, Pseudo_Users FROM Utilisateurs WHERE Pseudo_Users= ?');
+                            $reqConn->execute(array($pseudo)); 
+                            $data = $reqConn->fetch(); 
+                            session_start();
+                            
+                            $_SESSION['user'] = $data['Pseudo_Users'];
+                            $_SESSION['id_user'] = $data['Id_Users'];
+                            header('Location:../index.php?login=succes');
+
+                        }else{
+                            header('Location:../index.php?login=error');
+
+                        }
 
                     } else {
                         header('Location:../inscription.php?reg_err=conditionWrong');

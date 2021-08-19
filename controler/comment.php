@@ -22,6 +22,10 @@ if($_SESSION['user'] && $_SESSION['id_user']){
      $inf_comm = array($nameComment, $comment, $id_post);
      // ON EXECUTE LA REQUETE
      $req->execute($inf_comm);
+     
+        if($_GET['profil']){
+            
+        }
      // On redirige vers une page "user"
      header('Location:../post.php?id='.$_GET['id'].'&autor='.$_GET['autor'].'');
 
