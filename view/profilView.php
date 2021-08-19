@@ -2,28 +2,36 @@
 
 <div class="cover_profil">
 </div>
-
 <div class="top-profil">
-
-
 
     <div class="bloc-left-profil">
         <div class="avatar-bloc">
         </div>
 
         <div class="name-date">
+        <?php 
 
-            <p class="pseudo-profil">@joe-exotic</p>
-            <p class="email-profil"><em>charley.geoffroy@protonmail.com</em></p>
-            <button class="edit-profil">Modifier mes informations personnelles</button>
+        if($_GET['profil']){
+            $ReqdataName = $conn->prepare('SELECT Pseudo_Users, Email_Users, Bio_Users FROM Utilisateurs WHERE Id_Users =?');
+            $ReqdataName->execute(array($_GET['profil']));
+            $dataName = $ReqdataName->fetch();
+        }
+        
+        ?>
+            <p class="pseudo-profil"><?=$dataName['Pseudo_Users']?></p>
+            <p class="email-profil"><em><?=$dataName['Email_Users']?></em></p>
+        <?php 
+        if(isset($_SESSION['id_user'])){
+            if($_SESSION['id_user'] === $_GET['profil']){
+            echo' <button class="edit-profil">Modifier mes informations personnelles</button>';
+            }
+        }
+        ?>  
         </div>
     </div>
 
-
     <div class="profil-desc">
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos recusandae necessitatibus vel corporis
-            laborum labore praesentium numquam amet, provident, facere, odit sed. In accusamus repellendus est.
-            Sequi, nisi nesciunt. Cum?</p>
+        <p><?=$dataName['Bio_Users']?></p>
     </div>
 </div>
 </section>

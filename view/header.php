@@ -2,7 +2,6 @@
 session_start();
 require('modele/dbConnect.php');?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,19 +19,15 @@ require('modele/dbConnect.php');?>
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@100;300&display=swap"
         rel="stylesheet">
     <script src="style/animation.js"></script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>TITRE</title>
 
 </head>
 
 <body>
-    
 
     <header>
         <div id="header-container" class="header-container">
-
 
             <div class="content-left">
                 <div class="logo">
@@ -60,7 +55,7 @@ require('modele/dbConnect.php');?>
            
                 <?php if(isset($_SESSION['user'])){ 
                 echo '<img src="img/AddPost.svg" alt="AddPost" height="20px" id="AddPost" onclick="ModalAddArticle()">
-                <a href="profil.php"><img src="img/User.svg" alt="AddPost" class="img-rubrique" id="User"></a>';
+                <a href="profil.php?profil='.$_SESSION['id_user'].'"><img src="img/User.svg" alt="AddPost" class="img-rubrique" id="User"></a>';
                 require 'modal_Addpost.php';
                     } ?>
 
@@ -69,7 +64,7 @@ require('modele/dbConnect.php');?>
                     echo 'SetModal()';}else{echo "location.href='controler/deconnexion.php'";} ?>">
 
                 <?php if(isset($_SESSION['user'])){
-                   echo '<span style="color:red;">Déconnexion</span>'; }else{echo '<span style="color:green;">Connexion</span>';
+                   echo '<span style="color:red;">'.$_SESSION['user'].'</span>'; }else{echo '<span style="color:green;">Connexion</span>';
                    }?></button>
 
 

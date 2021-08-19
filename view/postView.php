@@ -24,7 +24,7 @@ while ($data = $req->fetch()){
         
         echo '
     <div class="carte_article">
-        <a href="post.php?id='. $data['Id_Users'] . '">
+        <a href="post.php?id='.$data['Id_Poste'].'&autor='.$data['Id_Users'].'">
             <div class="data_article">
                 <div class="meta_post">
                     <h3>'. $data['Titre_Poste'] .'</h3>
