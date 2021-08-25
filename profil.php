@@ -1,5 +1,6 @@
 <?php
-
+$title_page = 'Page profil';
+$title_post = ' TOUTES VOS PUBLICATIONS';
 require('view/header.php');
 
 require('view/modal_connexion.php');
@@ -13,7 +14,6 @@ if(isset($_GET['profil'])){
     header('Location:../404.php');    
 
 }
-
 require('view/profilView.php');
 
 

@@ -1,4 +1,39 @@
 
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function DropDownMenu(html){
+  var rubrique = document.getElementById("myDropdown_rubr");
+  var menu = document.getElementById("myDropdown");
+
+  if(menu.classList.contains("show") == true){
+   menu.classList.remove("show");
+  }
+
+  if(rubrique.classList.contains("show") == true){
+      rubrique.classList.remove("show");
+   }
+
+document.getElementById(html).classList.toggle("show");
+
+  
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.drop_btn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+
 function SetModal(){
 
     var modal = document.querySelector("#myModal");
@@ -72,7 +107,7 @@ function EditInf(){
     }
 }
 
-function darkMode(){
+/*function darkMode(){
   var toggled =false;
  
 var welcoming = document.getElementById("container-welcoming");

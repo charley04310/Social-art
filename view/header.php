@@ -20,90 +20,115 @@ require('modele/dbConnect.php');?>
         rel="stylesheet">
     <script src="style/animation.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITRE</title>
+    <title><?=$title_page?></title>
 
 </head>
 
 <body>
 
-    <header>
-        <div id="header-container" class="header-container">
-
+<header>
+    <div id="header-container" class="header-container">
             <div class="content-left">
                 <div class="logo">
-                    <a href="index.php"><img src="img/logo_socialart.svg" alt="" width="100px"></a>
+                    <a href="index.php"><img src="img/logo_socialart.svg" alt="" width="70px"></a>
+                </div>
+            </div>
+
+
+        <div class="content-right">
+
+        <div class="dropdown">
+            <a href="#" onclick="DropDownMenu('myDropdown_rubr')" class="drop_btn" style="color:white;">rubriques<img class="fleche_menu" src="img/caret.svg" height="11px"></a>
+                <div id="myDropdown_rubr" class="dropdown-content">
+               
+                <div class="tooltip">
+                    <a href="index.php?cat=Développement"><img src="img/developpement.svg" alt="" class="img-rubrique" id="developpement">
+                    <span class="tooltiptext">DÉVELOPPEUR</span></a>
                 </div>
 
-                <!--<img src="img/logo_socialart.png" alt="">-->
-                <div class="search_bar">
-                    <input type="Search" name="Search" id="">
-
-                    <img src="img/search.svg" alt="Search" class="search_icone">
+                <div class="tooltip">
+                <a href="index.php?cat=Illustration"><img src="img/graphiste.svg" alt="" class="img-rubrique" id="graphiste">
+                    <span class="tooltiptext">ILLUSTRATION</span></a>
                 </div>
 
+                <div class="tooltip">
+                <a href="index.php?cat=Réseau"><img src="img/reseau.svg" alt="" class="img-rubrique" id="reseau">
+                    <span class="tooltiptext">RÉSEAU</span></a>
+                </div>
+
+                <div class="tooltip">
+                <a href="index.php?cat=Cyber-Sécurité"><img src="img/cyber-security.svg" alt="" class="img-rubrique" id="cyber">
+                    <span class="tooltiptext" style="width: 150px;">CYBER-SÉCURITÉ</span></a>
+                </div>
+
+                <div class="tooltip">
+                <a href="index.php?cat=Détente"><img src="img/detente.svg" alt="" class="img-rubrique" id="detente">
+                    <span class="tooltiptext">DÉTENTE</span></a>
+                </div>
+
+                
+
+                </div>
+            </div>
+
+            <div class="dropdown">
+                    <a href="#" onclick="DropDownMenu('myDropdown')" class="drop_btn" style="color:white;">menu<img class="fleche_menu" src="img/caret.svg" height="11px"></a>
+                <div id="myDropdown" class="dropdown-content">
+
+                    <div class="light-mode">
+                        <div class="theme_title">
+                                <p>THÈME MODE</p>
+                        </div>
+
+                        <div id="outer-div">
+
+                            <div id="inner-div"></div>
+                        </div>
+                    </div>
+
+                <?php if(isset($_SESSION['user'])){ 
+                echo '
+                                <a href="#" onclick="ModalAddArticle()" class="addpost">
+                                <p>AJOUTER UN POSTE</p>
+                                <img src="img/AddPost.svg" alt="AddPost" height="20px" id="AddPost">
+                                </a>
+                       
+                            
+                            <div class="edit_information">
+                            <a href="profil.php?profil='.$_SESSION['id_user'].'"style="color:rgb(240, 125, 45); text-decoration: none;"><b>'.$_SESSION['user'].'</b></a>
+                            </div>
+                    
+                ';
+                        require 'view/modal_Addpost.php';
+                    } ?>
+            <div class="login_drop">
+                <button class="login-button" id="Login" onclick="<?php if(!isset($_SESSION['user'])){
+                    echo 'SetModal()';}else{echo "location.href='controler/deconnexion.php'";} ?>">
+
+                <?php if(isset($_SESSION['user'])){
+                   echo '<span>Déconnexion</span>'; }else{echo '<span>Connexion</span>';
+                   }?></button>
 
             </div>
 
-            <div class="content-right">
-
-                <div class="light-mode">
-                  
-                    <div id="outer-div">
-                        <div id="inner-div"></div>
-                    </div>
-                </div>
+        </div>
+    </div>
+         
            
-                <?php if(isset($_SESSION['user'])){ 
-                echo '<img src="img/AddPost.svg" alt="AddPost" height="20px" id="AddPost" onclick="ModalAddArticle()">
-                <a href="profil.php?profil='.$_SESSION['id_user'].'"><img src="img/User.svg" alt="AddPost" class="img-rubrique" id="User"></a>';
-                require 'modal_Addpost.php';
-                    } ?>
-
 
                 <button class="login-button" id="Login" onclick="<?php if(!isset($_SESSION['user'])){
                     echo 'SetModal()';}else{echo "location.href='controler/deconnexion.php'";} ?>">
 
                 <?php if(isset($_SESSION['user'])){
-                   echo '<span style="color:red;">'.$_SESSION['user'].'</span>'; }else{echo '<span style="color:green;">Connexion</span>';
+                   echo '<span style="color:red;">'.$_SESSION['user']['0'].'</span>'; }else{echo '<span style="color:green;"><img class="user-comment" src="img/User.svg" height="13px"></span>';
                    }?></button>
 
 
-
-            </div>
-
         </div>
+        
 
-    </header>
+    </div>
 
 
-    <section id="left_fixed_navigation" class="left_fixed_navigation">
 
-        <div class="tooltip">
-            <img src="img/developpement.svg" alt="" class="img-rubrique" id="developpement">
-            <span class="tooltiptext">DÉVELOPPEUR</span>
-        </div>
-
-        <div class="tooltip">
-            <img src="img/graphiste.svg" alt="" class="img-rubrique" id="graphiste">
-            <span class="tooltiptext">ILLUSTRATION</span>
-        </div>
-
-        <div class="tooltip">
-            <img src="img/reseau.svg" alt="" class="img-rubrique" id="reseau">
-            <span class="tooltiptext">RÉSEAU</span>
-        </div>
-
-        <div class="tooltip">
-            <img src="img/cyber-security.svg" alt="" class="img-rubrique" id="cyber">
-            <span class="tooltiptext" style="width: 150px;">CYBER-SÉCURITÉ</span>
-        </div>
-
-        <div class="tooltip">
-            <img src="img/detente.svg" alt="" class="img-rubrique" id="detente">
-            <span class="tooltiptext">DÉTENTE</span>
-        </div>
-
-        <img src="img/fleche.svg" alt="" class="img-fleche" id="fleche">
-        <h2 class="rubrique-title">RUBRIQUES</h2>
-
-    </section>
+</header>

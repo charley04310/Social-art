@@ -1,53 +1,233 @@
+<h2 class="h2_index">
+    <div class="bloc_color_h2"></div><?= $title_post ?>
+</h2>
 
-
-<section id="container-welcoming" class="container-welcoming">
-    <h1> <?php if(isset($_SESSION['user'])){
-        echo 'Bienvenue <b>'. $_SESSION['user'] . '</b>';
-    } ?> Retrouve les dernieres créations de nos contributeurs</h1>
-    <p>Notre réseau social unique en son genre est destiné aux créateurs de contenues qui travaillent dans les
-        métiers de digital</p>
-</section>
 <section class="Article">
 
-<?php
-$req = $conn->query('SELECT * FROM Postes');
+    <?php
+function HtmlPost($data, $ReqdataName, $comment_div){
+         ?> 
+    <div class="container-article">
+        <div class="carte_article">
+            <a href="post.php?id=<?=$data['Id_Poste']?>'&autor=<?=$data['Id_Users']?>'&cat=<?=$data['Cat_Poste']?>">
+                <div class="data_article">
+                    <div class="meta_post">
+                        <h3><?=$data['Titre_Poste']?></h3>
+                        <p><?=$ReqdataName['Pseudo_Users']?></p>
+                    </div>
 
+                    <div class="meta_logo">
+                        <div class="like">
+                            <img src="img/heart.svg" alt="">
+                            <p><?=$data['Nbr_Avis']?></p>
+                        </div>
 
-while ($data = $req->fetch()){
+                        <div class="comment">
+                            <img src="img/comment.svg" alt="">
+                            <p><?=$data['Nbr_Comment']?></p>
+                        </div>
 
+                    </div>   
+                </div>
+            </a>
+        </div>
 
-    $ReqdataName = $conn->prepare('SELECT Pseudo_Users FROM Utilisateurs WHERE Id_Users =?');
-    $ReqdataName->execute(array($data['Id_Users']));
-    $ReqdataName = $ReqdataName->fetch();
-    
-    if($ReqdataName){
-        
-        echo '
-    <div class="carte_article">
-        <a href="post.php?id='.$data['Id_Poste'].'&autor='.$data['Id_Users'].'">
-            <div class="data_article">
-                <div class="meta_post">
-                    <h3>'. $data['Titre_Poste'] .'</h3>
-                    <p> ' .$ReqdataName['Pseudo_Users']. ' </p>
+            <div class="dropdown-container-post">
+
+                <a onclick="DropDownMenu('myDropdown_comment_<?=$data['Id_Poste']?>')" class="drop_btn" style="color:white; font-size:12px;">
+                    <img class="fleche_menu" src="img/comment.svg" height="13px">  
+                    AFFICHER LES COMMENTAIRES
+                </a>
+
+                <div id="myDropdown_comment_<?=$data['Id_Poste']?>" class="dropdown-postCom <?=$data['Id_Poste']?>">
+                    
+                    <?=$comment_div?>
+                
                 </div>
 
-                <div class="meta_logo">
-                    <div class="like">
-                        <img src="img/heart.svg" alt="">
-                        <p>' .$data['Nbr_Avis']. '</p>
-                    </div>
-
-                    <div class="comment">
-                        <img src="img/comment.svg" alt="">
-                        <p>' .$data['Nbr_Comment']. '</p>
-                    </div>
-
-                </div>   
             </div>
-        </a>
-    </div>';
+            <div class="separator-card-post"></div>
+
+
+    </div> 
+<?php }
+
+function GetComment($conn, $data, $comment_div){
+
+
+    $comment = $conn->prepare('SELECT Desc_Com, Pseudo_User FROM MetaPost WHERE Id_Poste =?');
+    $comment->execute(array($data['Id_Poste']));
+  
+        while ($DataComment = $comment->fetch()) {
+
+            if(isset($DataComment)){
+
+                $comment_div .=' 
+                <p  style="text-align:left;"><img class="user-comment" src="img/User.svg" height="13px"> ' . $DataComment['Pseudo_User'] . '</p>
+                <p>' . $DataComment['Desc_Com'] . '</p> ';
+
+            }else{
+                $comment_div = "";
+            }
+        }
+}
+
+
+
+    if (isset($_GET['cat'])) {
+
+        function DataCat($dataName, $conn)
+        {
+          
+
+            while ($data = $dataName->fetch()) {
+
+                $Req = $conn->prepare('SELECT Pseudo_Users FROM Utilisateurs WHERE Id_Users =?');
+                $Req->execute(array($data['Id_Users']));
+                $ReqdataName = $Req->fetch();
+
+                $comment_div = "";
+        
+                $comment = $conn->prepare('SELECT Desc_Com, Pseudo_User FROM MetaPost WHERE Id_Poste =?');
+                $comment->execute(array($data['Id_Poste']));
+            
+                    while ($DataComment = $comment->fetch()) {
+
+                        if(isset($DataComment)){
+                            $comment_div .=' 
+                            <div class="comment_post"> 
+                                <p  style="text-align:left;"><img class="user-comment" src="img/User.svg" height="13px"> ' . $DataComment['Pseudo_User'] . '</p>
+                                <p>' . $DataComment['Desc_Com'] . '</p> 
+                            </div>';
+
+                        }else{
+                            $comment_div ="";
+                        }
+                    }
+
+                GetComment($conn, $data, $comment_div);
+                HtmlPost($data, $ReqdataName, $comment_div);
+            }
+        }
+
+        $categorie =  $_GET['cat'];
+        $dataName = $conn->prepare('SELECT * FROM Postes WHERE Cat_Poste =?');
+
+        switch ($categorie) {
+            case 'Développement':
+                $dataName->execute(array($categorie));
+                DataCat($dataName, $conn);
+                die;
+
+            case 'Illustration':
+                $dataName->execute(array($categorie));
+                DataCat($dataName, $conn);
+                die;
+
+
+            case 'Réseau':
+                $dataName->execute(array($categorie));
+                DataCat($dataName, $conn);
+                die;
+
+            case 'Cyber-Sécurité':
+                $dataName->execute(array($categorie));
+                DataCat($dataName, $conn);
+                die;
+
+            case 'Détente':
+                $dataName->execute(array($categorie));
+                DataCat($dataName, $conn);
+                die;
+        }
+    }else{
+
+        if (isset($_GET['profil'])) {
+
+            function DataCat($dataName, $conn)
+            {
+                $comment_div = "";
+                while ($data = $dataName->fetch()) {
+
+                    $Req = $conn->prepare('SELECT Pseudo_Users FROM Utilisateurs WHERE Id_Users =?');
+                    $Req->execute(array($data['Id_Users']));
+                    $ReqdataName = $Req->fetch();
+                    $comment_div = "";
+        
+                    $comment = $conn->prepare('SELECT Desc_Com, Pseudo_User FROM MetaPost WHERE Id_Poste =?');
+                    $comment->execute(array($data['Id_Poste']));
+                
+                        while ($DataComment = $comment->fetch()) {
+    
+                            if(isset($DataComment)){
+    
+                                $comment_div .=' 
+                                <div class="comment_post"> 
+                                    <p  style="text-align:left;"><img class="user-comment" src="img/User.svg" height="13px"> ' . $DataComment['Pseudo_User'] . '</p>
+                                    <p>' . $DataComment['Desc_Com'] . '</p> 
+                                </div>';
+    
+                            }else{
+                                $comment_div .=' 
+                                <div class="comment_post"> 
+                                    
+                                </div>';
+    
+                            }
+                        }
+                        
+                    HtmlPost($data, $ReqdataName, $comment_div);
+                }
+            }
+            $profil =  $_GET['profil'];
+            $dataName = $conn->prepare('SELECT * FROM Postes WHERE Id_Users =?');
+
+            switch ($profil) {
+
+                case $profil:
+                    $dataName->execute(array($profil));
+                    DataCat($dataName, $conn);
+                    die;
+            }
+        }else{
+
+            $req = $conn->query('SELECT * FROM Postes');
+
+
+            while ($data = $req->fetch()) {
+
+                $ReqdataName = $conn->prepare('SELECT Pseudo_Users FROM Utilisateurs WHERE Id_Users =?');
+                $ReqdataName->execute(array($data['Id_Users']));
+                $ReqdataName = $ReqdataName->fetch();
+
+                $comment_div = "";
+        
+                $comment = $conn->prepare('SELECT Desc_Com, Pseudo_User FROM MetaPost WHERE Id_Poste =?');
+                $comment->execute(array($data['Id_Poste']));
+            
+                    while ($DataComment = $comment->fetch()) {
+
+                        if(isset($DataComment)){
+
+                            $comment_div .=' 
+                            <div class="comment_post"> 
+                                <p  style="text-align:left;"><img class="user-comment" src="img/User.svg" height="13px"> ' . $DataComment['Pseudo_User'] . '</p>
+                                <p>' . $DataComment['Desc_Com'] . '</p> 
+                            </div>';
+
+                        }else{
+                            $comment_div = "";
+                        }
+                    }
+             HtmlPost($data, $ReqdataName, $comment_div);
+                
+            }
+
+        }
+        $req->closeCursor();
     }
-} 
-$req->closeCursor();
-?>
+
+
+
+    ?>
 </section>

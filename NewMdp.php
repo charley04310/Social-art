@@ -1,4 +1,6 @@
 <?php 
+$title_page = 'Nouveau Mot de Passe';
+
 require('modele/dbConnect.php');
 
 require('view/header.php');
