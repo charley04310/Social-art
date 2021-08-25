@@ -38,7 +38,8 @@ function HtmlPost($data, $ReqdataName, $comment_div){
                     <img class="fleche_menu" src="img/comment.svg" height="13px">  
                     AFFICHER LES COMMENTAIRES
                 </a>
-
+                <img width="15px" src="img/heartFull.svg" style="position:relative; left: 2px;top: 4px;">
+                <?=$data['Nbr_Avis']?>
                 <div id="myDropdown_comment_<?=$data['Id_Poste']?>" class="dropdown-postCom <?=$data['Id_Poste']?>">
                     
                     <?=$comment_div?>

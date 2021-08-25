@@ -1,6 +1,6 @@
 <?php
 
-$req = $conn->prepare('SELECT Titre_Poste, Id_Poste, Cat_Poste, Date_Poste, Id_Users, Desc_Poste, Img_Poste FROM Postes WHERE Id_Poste =?');
+$req = $conn->prepare('SELECT Titre_Poste, Id_Poste, Cat_Poste, Date_Poste, Id_Users, Desc_Poste, Img_Poste, Nbr_Avis FROM Postes WHERE Id_Poste =?');
 $req->execute(array($_GET['id']));
 $data = $req->fetch();
 
@@ -63,9 +63,9 @@ if (isset($_SESSION['id_user'])) {
                 <p>Catégorie : <em><?= $data['Cat_Poste'] ?></em></p>
                 <p>Pulication : <em><?= $data['Date_Poste'] ?></em></p>
 
-                <p> <?php if (isset($Like)) {
-                        echo '<p style="font-size:11px;">' . $Like;
-                    } ?><img width="12px" src="img/heartFull.svg" style="margin-left: 0.5rem;"></p>
+                
+                    <p style="font-size:11px;"><?= $data['Nbr_Avis']?>
+                    <img width="12px" src="img/heartFull.svg" style="margin-left: 0.5rem;"></p>
 
                 <div class="separator-metapost"></div>
                 <p class="description_article"><?= $data['Desc_Poste'] ?></p>
