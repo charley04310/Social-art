@@ -59,7 +59,7 @@ if (isset($_SESSION['id_user'])) {
                     <div class="bloc_color_h2"></div> <?= $data['Titre_Poste'] ?>
                 </h1>
 
-                <p style="color: #FF7D2C;"><a href="profil.php?profil=<?= $_GET['autor'] ?>" style="color:#fe7400;"><img class="user-comment" src="img/User.svg" height="13px"> <?= $dataName['Pseudo_Users'] ?></a></p>
+                <p style="color: #FF7D2C;"><a href="profil.php?profil=<?= $_GET['autor']?>" style="color:#fe7400;"><img class="user-comment" src="img/User.svg" height="13px"> <?= $dataName['Pseudo_Users'] ?></a></p>
                 <p>Catégorie : <em><?= $data['Cat_Poste'] ?></em></p>
                 <p>Pulication : <em><?= $data['Date_Poste'] ?></em></p>
 

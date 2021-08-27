@@ -164,7 +164,11 @@ margin-left: 1rem;
 font-size: 11px;
 }
 
-  
+.dropdown-container-Commentpost {
+    margin: 0 1rem 0 1rem;
+    font-size: 11px;
+    }
+    
 
   .dropdown-comment,.dropdown-edit,.dropdown-secu {
     border-radius: 4px;
@@ -180,8 +184,25 @@ font-size: 12px;
 }
 
 .dropdown-postCom{
-    display: none;
+    padding-left: 1rem;
+    visibility: hidden;
+    height: 0px;
+    transition: all 0.2s ease-in;
+  
+
+
 }
+
+
+.dropdown-postCom.show{
+    text-align: left;
+    visibility: visible;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
 
 
 .dropdown-edit,.dropdown-secu {
@@ -529,23 +550,24 @@ position: relative;
 
 
 /*----------------------------------- welcoming ---------------------------------- */
-.welcoming_para{
-    position: relative;
-    bottom: -110px;
-}
 
+p.welcoming_para {
+    padding: 2rem;
+}
   section.container-welcoming {
-    padding: 5rem 2rem 2rem 2rem;
+      position: relative;
+      top: 80px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     text-align: center;
     color: var( --main-text-color);
-    background-image: url('img/index.jpeg');
-    background-size: cover;
-    height: 400px;
+    background-image: url('img/social_covertest.png');
+    background-size: 100%;
+    height: 800px;
     font-size: 15px;
+    background-repeat: no-repeat;
 }
 
 .bloc_color_h2 {
@@ -600,16 +622,7 @@ cursor: pointer;
     height: 15px;
 
 }
-.meta_logo{
-    display: flex;
-    justify-content: flex-end;
-}
-.meta_logo p{
-    font-size:9px;
-}
-.meta_logo div{
-    padding:1rem;
-}
+
 
 
 
@@ -915,6 +928,10 @@ height: 15px;}
 
 
   @media (max-width: 1245px) {
+
+    section.container-welcoming {
+        height: 650px;
+    }
     .input_edit_inf{
         display: block;
     }
@@ -929,7 +946,11 @@ height: 15px;}
   
 
   @media (max-width: 1024px) {
+    section.container-welcoming {
+        height: 600px;
+    }
     .bloc_cpt {
+        
       
         width: 60%;
     }
@@ -937,6 +958,9 @@ height: 15px;}
 
 
   @media (max-width: 768px) {
+    section.container-welcoming {
+        height: 450px;
+    }
    
     .bloc_add_supp {
   
@@ -961,4 +985,26 @@ height: 15px;}
     .dropdown-container-post {
         width: 100%;
     }
+    section.container-welcoming {
+        height: 335px;
+    }
+    .Article {
+margin-top: 3rem;
+    }
+
+
+.carte_article {
+width: 100%;
+    height: 180px;
+     border-radius: 0px; 
+
+    margin: 0 ; 
+ 
+}
+.container-article {
+    width: 100%;
+}
+.separator-card-post {
+   display: none;
+}
       }

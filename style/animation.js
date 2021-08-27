@@ -107,7 +107,7 @@ function EditInf(){
     }
 }
 
-/*function darkMode(){
+function darkMode(){
   var toggled =false;
  
 var welcoming = document.getElementById("container-welcoming");

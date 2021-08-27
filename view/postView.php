@@ -9,30 +9,19 @@ function HtmlPost($data, $ReqdataName, $comment_div){
          ?> 
     <div class="container-article">
         <div class="carte_article">
-            <a href="post.php?id=<?=$data['Id_Poste']?>'&autor=<?=$data['Id_Users']?>'&cat=<?=$data['Cat_Poste']?>">
+            <a href="post.php?id=<?=$data['Id_Poste']?>&autor=<?=$data['Id_Users']?>&cat=<?=$data['Cat_Poste']?>">
                 <div class="data_article">
                     <div class="meta_post">
                         <h3><?=$data['Titre_Poste']?></h3>
                         <p><?=$ReqdataName['Pseudo_Users']?></p>
                     </div>
 
-                    <div class="meta_logo">
-                        <div class="like">
-                            <img src="img/heart.svg" alt="">
-                            <p><?=$data['Nbr_Avis']?></p>
-                        </div>
 
-                        <div class="comment">
-                            <img src="img/comment.svg" alt="">
-                            <p><?=$data['Nbr_Comment']?></p>
-                        </div>
-
-                    </div>   
                 </div>
             </a>
         </div>
 
-            <div class="dropdown-container-post">
+            <div class="dropdown-container-Commentpost">
 
                 <a onclick="DropDownMenu('myDropdown_comment_<?=$data['Id_Poste']?>')" class="drop_btn" style="color:white; font-size:12px;">
                     <img class="fleche_menu" src="img/comment.svg" height="13px">  
@@ -65,7 +54,8 @@ function GetComment($conn, $data, $comment_div){
 
                 $comment_div .=' 
                 <p  style="text-align:left;"><img class="user-comment" src="img/User.svg" height="13px"> ' . $DataComment['Pseudo_User'] . '</p>
-                <p>' . $DataComment['Desc_Com'] . '</p> ';
+                <p>' . $DataComment['Desc_Com'] . '</p> 
+                <div class="separator-card-post"></div>';
 
             }else{
                 $comment_div = "";
@@ -214,6 +204,7 @@ function GetComment($conn, $data, $comment_div){
                             <div class="comment_post"> 
                                 <p  style="text-align:left;"><img class="user-comment" src="img/User.svg" height="13px"> ' . $DataComment['Pseudo_User'] . '</p>
                                 <p>' . $DataComment['Desc_Com'] . '</p> 
+                                <div class="separator-card-post"></div>
                             </div>';
 
                         }else{
