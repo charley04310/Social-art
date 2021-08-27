@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^social-art.fr [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.social-art.fr [NC]
+RewriteRule ^(.*)$ http://social-art.fr/$1 [L,R=301,NC]
+DirectoryIndex index.php
