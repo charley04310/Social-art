@@ -49,7 +49,7 @@ if (isset($_SESSION['id_user'])) {
     <div class="post_view">
 
         <div class="cover_post">
-            <img src="<?= $data['Img_Poste'] ?>" style="height: 340px; width: 100vw;" alt="">
+            <img src="<?= $data['Img_Poste'] ?>" class="img_poste_couverture" alt="">
         </div>
 
         <div class="data_post">

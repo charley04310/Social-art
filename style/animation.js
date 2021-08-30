@@ -107,37 +107,53 @@ function EditInf(){
     }
 }
 
-function darkMode(){
-  var toggled =false;
- 
+
+
+
+
+
+
+/*function darkMode(){
+
 var welcoming = document.getElementById("container-welcoming");
-var navLeftFixed = document.getElementById("left_fixed_navigation");
-var headerContainer = document.getElementById("header-container");
-var switchHolder = document.getElementById("outer-div");
-var switchButton = document.getElementById("inner-div");
+
+let root = document.documentElement;
+  var toggled =false;
+  var switchHolder = document.getElementById("outer-div");
+  var switchButton = document.getElementById("inner-div");
 
 switchButton.addEventListener('click',function () {
   if(!toggled){
   switchButton.style.transition =".4s all ease-in-out";
   switchButton.style.transform ="translateX(25px)";
   switchButton.style.backgroundColor = "white";
-  switchHolder.style.border= "2px solid white";
-  document.body.style.backgroundColor = "#1d222f";
-  headerContainer.style.backgroundColor = "#262b37"
-  navLeftFixed.style.backgroundColor = "#262b37";
-  welcoming.style.color ="white";
+  switchHolder.style.border= "1px solid white";
+  root.style.setProperty('--main-header-color', '#BFBFBF');
+  root.style.setProperty('--main-menu-color', 'linear-gradient(180deg, rgba(191,191,191,1) 0%, rgba(191,191,191,1) 20%, rgba(191,191,191,0.7791491596638656) 46%, rgba(191,191,191,0.3897934173669467) 100%)');
+
+  welcoming.style.backgroundImage = "url('img/social_coverlight.png')"
+  
+
   toggled = true;
   }else{
 
+  root.style.setProperty('--main-header-color', '#19191a');
+  root.style.setProperty('--main-menu-color', 'linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(20,20,20,1) 20%, rgba(20,20,20,0.9528186274509804) 37%, rgba(22,22,22,0.7819502801120448) 76%, rgba(25,25,26,0.5242471988795518) 100%)');
+
+
+
   switchButton.style.transition =".4s all ease-in-out";
-  headerContainer.style.backgroundColor = "#d6d6d6"
-  navLeftFixed.style.backgroundColor = "#707070";
   switchButton.style.transform ="translateX(4px)";
   switchButton.style.backgroundColor = "#f07d2d";
-  switchHolder.style.border= "2px solid #f07d2d";
-  document.body.style.backgroundColor = "white";
-  headerContainer.style.backgroundColor = "white";
-  welcoming.style.color = "black";
+  switchHolder.style.border= "1px solid #f07d2d";
+  
+
+
+  welcoming.style.backgroundImage = "url('img/social_covertest.png')"
+
+
+
+
   toggled = false;
   }
 });

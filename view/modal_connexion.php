@@ -13,8 +13,7 @@
                 <span class="close">&times;</span><br>
 
                 </div>
-
-<img src="img/logo_socialart.svg" alt="social_art">
+<img src="img/logo_socialarttest.svg" alt="">
         <form action="controler/Login.php" method="post">
         <?php 
 
@@ -85,8 +84,8 @@ if(isset($_GET['login_err'])){
                 </div>
 
                 <div class="create_account">
-                    <p>Vous n'avez pas encore de Compte ? <a href="inscription.php">Enregistrez-vous !</a></p>
-                   <p>Vous avez oubliez <a href="NewMdp.php">Mot de passe ?</a></p>
+                    <p>Vous n'avez pas encore de Compte ? <a href="inscription.php" style="color:#E9CF76;">Enregistrez-vous !</a></p>
+                   <p>Vous avez oubliez <a href="NewMdp.php" style="color:#E9CF76;">Mot de passe ?</a></p>
                 </div>
             </div>
         </form>

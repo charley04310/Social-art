@@ -3,7 +3,7 @@ if(!isset($_SESSION)){session_start();}
 require('modele/dbConnect.php');?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html">
 
 <head>
     <meta charset="UTF-8">
@@ -19,10 +19,14 @@ require('modele/dbConnect.php');?>
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@100;300&display=swap"
         rel="stylesheet">
     <script src="style/animation.js"></script>
+    <script src="style/themeswitch.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=$title_page?></title>
 
 </head>
+
+
 
 <body>
 
@@ -30,7 +34,7 @@ require('modele/dbConnect.php');?>
     <div id="header-container" class="header-container">
             <div class="content-left">
                 <div class="logo">
-                    <a href="index.php"><img src="img/logo_socialart.svg" alt="" width="70px"></a>
+                    <a href="index.php"><img src="img/logo_socialarttest.svg" alt="" width="70px"></a>
                 </div>
             </div>
 
@@ -80,10 +84,11 @@ require('modele/dbConnect.php');?>
                                 <p>THÈME MODE</p>
                         </div>
 
-                        <div id="outer-div">
+                        <label id="switch" class="switch">
+                            <input type="checkbox" onchange="toggleTheme()" id="slider">
+                            <span class="slider round"></span>
+                        </label>
 
-                            <div id="inner-div"></div>
-                        </div>
                     </div>
 
                 <?php if(isset($_SESSION['user'])){ 
@@ -95,7 +100,7 @@ require('modele/dbConnect.php');?>
                        
                             
                             <div class="edit_information">
-                            <a href="profil.php?profil='.$_SESSION['id_user'].'"style="color:rgb(240, 125, 45); text-decoration: none;"><b>'.$_SESSION['user'].'</b></a>
+                            <a href="profil.php?profil='.$_SESSION['id_user'].'"style="color:var(--main-nav-color); text-decoration: none;"><b>'.$_SESSION['user'].'</b></a>
                             </div>
                     
                 ';
@@ -120,7 +125,7 @@ require('modele/dbConnect.php');?>
                     echo 'SetModal()';}else{echo "location.href='controler/deconnexion.php'";} ?>">
 
                 <?php if(isset($_SESSION['user'])){
-                   echo '<span style="color:red;">'.$_SESSION['user']['0'].'</span>'; }else{echo '<span style="color:green;"><img class="user-comment" src="img/User.svg" height="13px"></span>';
+                   echo '<span style="color:var(#E9CF76);">'.$_SESSION['user']['0'].'</span>'; }else{echo '<span style="color:green;"><img class="user-comment" src="img/User.svg" height="13px"></span>';
                    }?></button>
 
 

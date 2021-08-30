@@ -2,7 +2,7 @@
 
 
     <h1> <?php if(isset($_SESSION['user'])){
-        echo 'Bienvenue <b style="color:#fe7400;">'. $_SESSION['user'] . '</b>';
+        echo 'Bienvenue <b style="color:var(--main-nav-color);">'. $_SESSION['user'] . '</b>';
     }else{
         echo ' Benvenue sur la plateforme SOCIAL\'ART';
     } ?></h1>

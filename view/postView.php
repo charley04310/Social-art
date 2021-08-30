@@ -8,7 +8,7 @@
 function HtmlPost($data, $ReqdataName, $comment_div){
          ?> 
     <div class="container-article">
-        <div class="carte_article">
+        <div class="carte_article" style="background-image:url('<?=$data['Img_Poste']?>')">
             <a href="post.php?id=<?=$data['Id_Poste']?>&autor=<?=$data['Id_Users']?>&cat=<?=$data['Cat_Poste']?>">
                 <div class="data_article">
                     <div class="meta_post">
