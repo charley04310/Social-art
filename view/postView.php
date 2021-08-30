@@ -45,7 +45,7 @@ function HtmlPost($data, $ReqdataName, $comment_div){
 function GetComment($conn, $data, $comment_div){
 
 
-    $comment = $conn->prepare('SELECT Desc_Com, Pseudo_User FROM MetaPost WHERE Id_Poste =?');
+    $comment = $conn->prepare('SELECT Desc_Com, Pseudo_User FROM metaPost WHERE Id_Poste =?');
     $comment->execute(array($data['Id_Poste']));
   
         while ($DataComment = $comment->fetch()) {
@@ -73,13 +73,13 @@ function GetComment($conn, $data, $comment_div){
 
             while ($data = $dataName->fetch()) {
 
-                $Req = $conn->prepare('SELECT Pseudo_Users FROM Utilisateurs WHERE Id_Users =?');
+                $Req = $conn->prepare('SELECT Pseudo_Users FROM utilisateurs WHERE Id_Users =?');
                 $Req->execute(array($data['Id_Users']));
                 $ReqdataName = $Req->fetch();
 
                 $comment_div = "";
         
-                $comment = $conn->prepare('SELECT Desc_Com, Pseudo_User FROM MetaPost WHERE Id_Poste =?');
+                $comment = $conn->prepare('SELECT Desc_Com, Pseudo_User FROM metaPost WHERE Id_Poste =?');
                 $comment->execute(array($data['Id_Poste']));
             
                     while ($DataComment = $comment->fetch()) {
@@ -140,7 +140,7 @@ function GetComment($conn, $data, $comment_div){
                 $comment_div = "";
                 while ($data = $dataName->fetch()) {
 
-                    $Req = $conn->prepare('SELECT Pseudo_Users FROM Utilisateurs WHERE Id_Users =?');
+                    $Req = $conn->prepare('SELECT Pseudo_Users FROM utilisateurs WHERE Id_Users =?');
                     $Req->execute(array($data['Id_Users']));
                     $ReqdataName = $Req->fetch();
                     $comment_div = "";
@@ -171,7 +171,7 @@ function GetComment($conn, $data, $comment_div){
                 }
             }
             $profil =  $_GET['profil'];
-            $dataName = $conn->prepare('SELECT * FROM Postes WHERE Id_Users =?');
+            $dataName = $conn->prepare('SELECT * FROM postes WHERE Id_Users =?');
 
             switch ($profil) {
 
@@ -182,12 +182,12 @@ function GetComment($conn, $data, $comment_div){
             }
         }else{
 
-            $req = $conn->query('SELECT * FROM Postes');
+            $req = $conn->query('SELECT * FROM postes');
 
 
             while ($data = $req->fetch()) {
 
-                $ReqdataName = $conn->prepare('SELECT Pseudo_Users FROM Utilisateurs WHERE Id_Users =?');
+                $ReqdataName = $conn->prepare('SELECT Pseudo_Users FROM utilisateurs WHERE Id_Users =?');
                 $ReqdataName->execute(array($data['Id_Users']));
                 $ReqdataName = $ReqdataName->fetch();
 
