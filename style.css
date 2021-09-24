@@ -192,7 +192,6 @@ h3 {
     flex-direction: row;
     flex-wrap: wrap;
     height: 70px;
-    position: fixed;
     width: 100%;
     z-index: 100;
     color: white;
@@ -1108,4 +1107,98 @@ input#save_user {
     .separator-card-post {
         display: none;
     }
+}
+
+
+
+.loader{
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    width: 100%;
+    background: var(--main-section-color);
+    display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.lettre{
+    
+	font-family: 'Poppins', sans-serif;
+	color: rgb(255, 255, 255);
+	font-size: 15px;
+	animation: flash 2.2s linear infinite;
+}
+
+@keyframes flash {
+	0%{
+		color: rgb(255, 255, 255);
+		opacity: 100%;
+		text-shadow: 0 0 2px #ffffff;
+	}
+	90%{
+		opacity: 100%;
+		color: #000000;
+		text-shadow: none;
+	}
+	100%{	
+		opacity: 100%;
+
+		color: rgb(255, 255, 255);
+		text-shadow: 0 0 2px #ffffff;
+	}
+}
+
+.lettre:nth-child(1){
+	animation-delay: 0.2s;
+}
+.lettre:nth-child(2){
+	animation-delay: 0.4s;
+}
+.lettre:nth-child(3){
+	animation-delay: 0.6s;
+}
+.lettre:nth-child(4){
+	animation-delay: 0.8s;
+}
+.lettre:nth-child(5){
+	animation-delay: 1s;
+}
+.lettre:nth-child(6){
+	animation-delay: 1.2s;
+}
+.lettre:nth-child(7){
+	animation-delay: 1.4s;
+}
+.lettre:nth-child(8){
+	animation-delay: 1.6s;
+}
+.lettre:nth-child(9){
+	animation-delay: 1.8s;
+}
+.lettre:nth-child(10){
+	animation-delay: 2s;
+}
+
+.fondu-out{
+	opacity: 0;
+	z-index: 0 !important;
+	transition: opacity 0.4s ease-out;
+ display: none;
+}
+
+.flex-bloc.cover {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.flex-bloc.cover p {
+	font-size: 14px;
+	margin-left: 4rem;
+
 }

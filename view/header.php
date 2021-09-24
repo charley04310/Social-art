@@ -137,3 +137,33 @@ require('modele/dbConnect.php');?>
 
 
 </header>
+
+<div class="loader">
+
+		<div class="flex-bloc cover" id="img_top">
+			<img style="width:100%;" src="img/logo_socialarttest.svg" />
+		</div>
+
+		<div class="container-lettre">
+			<span class="lettre">C</span>
+			<span class="lettre">H</span>
+			<span class="lettre">A</span>
+			<span class="lettre">R</span>
+			<span class="lettre">G</span>
+			<span class="lettre">E</span>
+			<span class="lettre">M</span>
+			<span class="lettre">E</span>
+			<span class="lettre">N</span>
+			<span class="lettre">T</span>
+
+		</div>
+
+	</div>
+
+	<script>
+		const loader = document.querySelector('.loader')
+		window.addEventListener('load', () => {
+			setTimeout(function(){loader.classList.add('fondu-out')}, 1000);
+			
+		})
+	</script>

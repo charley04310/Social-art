@@ -34,7 +34,7 @@ if(isset($VerifPassword)){
             session_destroy();
             session_start();
             $_SESSION['succes'] = 'UpdateOk';
-            header("Location:http://localhost:8888/social'art/Social-art/NewMdp.php");
+            header("Location:http://charley-portfolio.fr/NewMdp.php");
             
          }else{
 

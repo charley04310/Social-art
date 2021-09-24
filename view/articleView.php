@@ -32,15 +32,14 @@ if (isset($_SESSION['id_user'])) {
     $userLiked->execute(array($_SESSION['id_user'], $_GET['id']));
     $dataUserLiked = $userLiked->fetch();
 
+
     if ($dataUserLiked['Like_user'] === '1') {
         $heart = '<img width="25px" style="margin-top:1rem;" src="img/heartFull.svg" alt="">';
     } else {
         $heart = '<img width="25px" style="margin-top:1rem;" src="img/heart.svg" alt="">';
     }
 
-    if ($dataUserLiked['Dislike_user'] === '1') {
-        $Brokenheart = '<img width="15px" src="img/brokenheartFull.svg" alt="">';
-    }
+
 }
 
 ?>
@@ -59,9 +58,9 @@ if (isset($_SESSION['id_user'])) {
                     <div class="bloc_color_h2"></div> <?= $data['Titre_Poste'] ?>
                 </h1>
 
-                <p style="color: #FF7D2C;"><a href="profil.php?profil=<?= $_GET['autor']?>" style="color:#fe7400;"><img class="user-comment" src="img/User.svg" height="13px"> <?= $dataName['Pseudo_Users'] ?></a></p>
-                <p>Catégorie : <em><?= $data['Cat_Poste'] ?></em></p>
-                <p>Pulication : <em><?= $data['Date_Poste'] ?></em></p>
+                <p style="color: #E9CF76;"><a href="profil.php?profil=<?= $_GET['autor']?>" style="color: #E9CF76;"><img class="user-comment" src="img/User.svg" height="13px"> <?= $dataName['Pseudo_Users'] ?></a></p>
+                <p><em><?= $data['Cat_Poste'] ?></em></p>
+                <p><em><?= $data['Date_Poste'] ?></em></p>
 
                 
                     <p style="font-size:11px;"><?= $data['Nbr_Avis']?>
